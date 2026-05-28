@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>קורס החוסן</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@700;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --gold:#c8a15a;
+    --gold-light:#e3c98c;
+
+    --rose:#dcb4bc;
+    --rose-soft:#f7e7ea;
+
+    --cream:#fffaf8;
+
+    --dark:#231f20;
+    --soft:#5b5353;
+
+    --shadow:
+    0 10px 40px rgba(0,0,0,0.07);
+
+}
+
+body{
+
+    font-family:'Assistant',sans-serif;
+    background:#f6f1f1;
+    color:var(--dark);
+    overflow-x:hidden;
+
+}
+
+/* PAGE */
+
+.page{
+
+    width:900px;
+    margin:auto;
+    background:
+    linear-gradient(rgba(255,255,255,0.92),rgba(255,255,255,0.95)),
+    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 60px rgba(0,0,0,0.08);
+
+}
+
+/* WATERCOLOR */
+
+.page::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(circle,
+    rgba(248,196,208,0.55) 0%,
+    rgba(248,196,208,0.20) 40%,
+    transparent 75%);
+
+    top:-260px;
+    right:-170px;
+
+    z-index:0;
+
+}
+
+.page::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:
+    radial-gradient(circle,
+    rgba(243,196,206,0.60) 0%,
+    rgba(243,196,206,0.15) 40%,
+    transparent 75%);
+
+    bottom:-280px;
+    left:-180px;
+
+    z-index:0;
+
+}
+
+/* GOLD PARTICLES */
+
+.gold{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(rgba(200,161,90,0.45) 1px, transparent 1px);
+
+    background-size:14px 14px;
+
+    opacity:.18;
+
+    z-index:0;
+    pointer-events:none;
+
+}
+
+/* CORNERS */
+
+.corner-top{
+
+    position:absolute;
+
+    top:30px;
+    left:30px;
+
+    width:350px;
+    height:120px;
+
+    border-top:7px solid var(--gold);
+    border-left:7px solid var(--gold);
+
+    z-index:3;
+
+}
+
+.corner-bottom{
+
+    position:absolute;
+
+    bottom:30px;
+    right:30px;
+
+    width:350px;
+    height:120px;
+
+    border-bottom:7px solid var(--gold);
+    border-right:7px solid var(--gold);
+
+    z-index:3;
+
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+    z-index:2;
+
+    padding:
+    90px 80px 40px;
+
+    text-align:center;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:
+    rgba(255,255,255,0.55);
+
+    backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(200,161,90,0.5);
+
+    padding:
+    10px 28px;
+
+    border-radius:40px;
+
+    font-size:22px;
+    font-weight:700;
+
+    color:#5a4a32;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:35px;
+
+}
+
+.hero-title{
+
+    font-family:'Frank Ruhl Libre',serif;
+
+    font-size:86px;
+    line-height:1.05;
+
+    font-weight:900;
+
+    color:var(--dark);
+
+    position:relative;
+
+}
+
+.hero-title span{
+
+    display:block;
+
+    font-family:'Amatic SC',cursive;
+
+    font-size:108px;
+
+    color:#bb8f97;
+
+    margin-top:-10px;
+
+    letter-spacing:2px;
+
+}
+
+.hero-divider{
+
+    width:180px;
+    height:2px;
+
+    margin:
+    30px auto;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent);
+
+}
+
+.hero-sub{
+
+    font-size:28px;
+
+    line-height:1.9;
+
+    color:var(--soft);
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-weight:300;
+
+}
+
+.hero-sub strong{
+
+    color:var(--dark);
+    font-weight:800;
+
+}
+
+/* GLASS CARD */
+
+.glass-card{
+
+    width:82%;
+
+    margin:
+    60px auto;
+
+    padding:
+    45px 55px;
+
+    background:
+    rgba(255,255,255,0.52);
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,0.7);
+
+    border-radius:28px;
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,0.08);
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.glass-card::before{
+
+    content:'❝';
+
+    position:absolute;
+
+    top:10px;
+    left:35px;
+
+    font-size:120px;
+
+    color:rgba(220,180,188,0.18);
+
+    font-family:'Frank Ruhl Libre',serif;
+
+}
+
+.glass-title{
+
+    font-size:42px;
+    font-weight:900;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.glass-title span{
+
+    color:#bc8d96;
+
+    font-family:'Amatic SC',cursive;
+
+    font-size:60px;
+
+}
+
+.glass-text{
+
+    font-size:24px;
+
+    line-height:2.1;
+
+    text-align:center;
+
+    color:#433d3d;
+
+    font-weight:400;
+
+}
+
+/* FEATURES */
+
+.features{
+
+    position:relative;
+    z-index:2;
+
+    padding:
+    10px 60px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:52px;
+    font-weight:900;
+
+    margin-bottom:55px;
+
+    font-family:'Frank Ruhl Libre',serif;
+
+}
+
+.section-title span{
+
+    font-family:'Amatic SC',cursive;
+
+    color:#c3939d;
+
+    font-size:70px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:28px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:
+    35px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+}
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    right:0;
+    left:0;
+
+    height:6px;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--gold),
+    #f0d59a,
+    var(--gold));
+
+}
+
+.icon{
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #f8d8de,
+    #fff);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+
+    margin-bottom:22px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.05);
+
+}
+
+.card h3{
+
+    font-size:34px;
+
+    margin-bottom:14px;
+
+    font-family:'Amatic SC',cursive;
+
+    color:#8b6168;
+
+}
+
+.card p{
+
+    font-size:21px;
+
+    line-height:1.9;
+
+    color:#4f4848;
+
+}
+
+/* METHODS */
+
+.methods{
+
+    position:relative;
+    z-index:2;
+
+    padding:
+    90px 70px;
+
+    text-align:center;
+
+}
+
+.methods-title{
+
+    font-size:48px;
+
+    font-weight:900;
+
+    margin-bottom:50px;
+
+}
+
+.methods-grid{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:24px;
+
+}
+
+.method{
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,0.92),
+    rgba(255,255,255,0.6));
+
+    backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(200,161,90,0.45);
+
+    padding:
+    18px 40px;
+
+    border-radius:70px;
+
+    font-size:32px;
+    font-weight:800;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.method:hover{
+
+    transform:scale(1.06);
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    position:relative;
+    z-index:2;
+
+    background:
+    linear-gradient(
+    135deg,
+    #2a2526,
+    #433739);
+
+    padding:
+    65px 50px;
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+.footer::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent);
+
+}
+
+.footer-title{
+
+    font-size:46px;
+
+    color:#fff;
+
+    font-weight:900;
+
+    margin-bottom:18px;
+
+    font-family:'Frank Ruhl Libre',serif;
+
+}
+
+.footer-sub{
+
+    color:rgba(255,255,255,0.8);
+
+    font-size:24px;
+
+    line-height:1.9;
+
+}
+
+.footer-ornament{
+
+    margin-top:25px;
+
+    color:var(--gold-light);
+
+    letter-spacing:8px;
+
+    font-size:20px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="gold"></div>
+
+<div class="corner-top"></div>
+<div class="corner-bottom"></div>
+
+<section class="hero">
+
+<div class="badge">
+הכשרה מקצועית · תשפ"ו 2026
+</div>
+
+<h1 class="hero-title">
+קורס
+<span>החוסן</span>
+</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-sub">
+ארגז כלים מתקדם לניהול רגשי,
+ויסות וקידום תלמידים —
+<strong>בגישה מקצועית, מעשית ומדויקת לשטח</strong>
+</p>
+
+</section>
+
+<section class="glass-card">
+
+<div class="glass-title">
+למה <span>הקורס הזה?</span>
+</div>
+
+<p class="glass-text">
+
+המציאות החינוכית של היום דורשת הרבה מעבר לידע מקצועי.
+אנשי חינוך נדרשים להוביל מרחב רגשי יציב,
+להתמודד עם עומסים וליצור סביבה תומכת ומקדמת.
+
+הקורס מעניק כלים יישומיים,
+מודלים עדכניים ושיטות עבודה מתקדמות
+לעבודה מדויקת ומחזקת בשטח.
+
+</p>
+
+</section>
+
+<section class="features">
+
+<h2 class="section-title">
+מה <span>תקבלו?</span>
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>ויסות רגשי</h3>
+
+<p>
+כלים מקצועיים להתמודדות עם עומס,
+ניהול מצבי לחץ ובניית יציבות פנימית.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>שינוי דפוסי חשיבה</h3>
+
+<p>
+למידת טכניקות מתקדמות
+ליצירת תפיסה מקדמת וחיזוק חוסן אישי.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>כלים יישומיים</h3>
+
+<p>
+שיטות עבודה ברורות ומעשיות
+שניתנות ליישום מיידי במסגרת החינוכית.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">✦</div>
+
+<h3>עבודה מקצועית</h3>
+
+<p>
+שילוב מודלים מובילים
+מעולם ההנחיה, האימון והטיפול הרגשי.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="methods">
+
+<h2 class="methods-title">
+שיטות מובילות המשולבות בתכנית
+</h2>
+
+<div class="methods-grid">
+
+<div class="method">NLP</div>
+<div class="method">CBT</div>
+<div class="method">DBT</div>
+<div class="method">מיינדפולנס</div>
+<div class="method">תרפיה</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-title">
+הכשרה מקצועית שמחברת בין ידע לשטח
+</div>
+
+<div class="footer-sub">
+תכנית עומק מעשית, מדויקת ומתקדמת
+המיועדת לאנשי חינוך המבקשים להוביל שינוי אמיתי
+</div>
+
+<div class="footer-ornament">
+✦ ✦ ✦
+</div>
+
+</footer>
+
+</div>
+
+</body>
+</html>

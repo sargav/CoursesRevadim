@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>נוער בסיכוי – קורס מקצועי</title>
+
+<!-- טעינת הפונטים: שילוב של Amatic SC (סגנון כתב יד אותנטי) יחד עם Assistant ו-Frank Ruhl -->
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --brand-rose: #D4A396;        /* ורוד רבדים עמוק */
+    --brand-rose-light: #EAD3CE;  /* ורוד בהיר רך */
+    --brand-rose-pale: #FDF8F6;   /* רקע ורוד-שמנת בהיר ומואר ל-Hero */
+    --brand-sage: #A9BA9D;        /* ירוק מרווה אצילי מהלוגו */
+    --brand-dark: #3D3533;        /* אפור-חום כהה ואלגנטי מגזע העץ */
+    --brand-dark-soft: #514745;   /* גוון כהה משני לקריאות טקסט */
+    --brand-cream: #FAF7F2;       /* שמנת פנינה מעודנת לרקע הכללי */
+    --brand-white: #FFFFFF;
+    
+    /* הגדרת משפחות הפונטים - שילוב של כתב יד */
+    --font-heading: 'Frank Ruhl Libre', serif;
+    --font-body: 'Assistant', sans-serif;
+    --font-handwriting: 'Amatic SC', cursive; /* פונט כתב היד החדש */
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--brand-cream);
+    color: var(--brand-dark);
+    direction: rtl;
+    width: 794px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* ═══════════════════════════════════ HERO */
+  .hero {
+    background: linear-gradient(150deg, var(--brand-white) 0%, var(--brand-rose-pale) 60%, var(--brand-rose-light) 100%);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,0.8) 0%, transparent 80%),
+      radial-gradient(circle at 90% 10%, rgba(169, 186, 157, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(212, 163, 150, 0.2) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  .hero-border-top, .hero-border-bottom {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--brand-rose-light), var(--brand-rose), var(--brand-rose-light), transparent);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 60px;
+    width: 100%;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--brand-rose);
+    color: var(--brand-dark);
+    font-family: var(--font-handwriting); /* כתב יד */
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 24px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    line-height: 1.2;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: 68px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .hero-title span {
+    font-family: var(--font-handwriting); /* שילוב כתב יד בתוך כותרת הלוגו */
+    color: var(--brand-rose);
+    font-size: 88px;
+    display: block;
+    margin-top: -10px;
+    font-weight: 700;
+  }
+
+  .hero-divider {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-sage), transparent);
+    margin: 15px auto;
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--brand-dark-soft);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .hero-ornament {
+    color: var(--brand-rose);
+    font-size: 20px;
+    letter-spacing: 6px;
+    margin-top: 20px;
+    opacity: 0.85;
+  }
+
+  /* ═══════════════════════════════════ INTRO */
+  .intro-section {
+    background: var(--brand-white);
+    padding: 52px 60px;
+    border-bottom: 1px solid var(--brand-rose-light);
+    position: relative;
+  }
+
+  .intro-section::before {
+    content: '❝';
+    position: absolute;
+    top: 15px;
+    left: 48px;
+    font-size: 90px;
+    color: #FDF4F1;
+    font-family: var(--font-heading);
+    line-height: 1;
+  }
+
+  .intro-lead {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--brand-dark);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .intro-lead em {
+    font-family: var(--font-handwriting); /* הדגשת כתב יד לשאלה הרגשית */
+    color: var(--brand-rose);
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--brand-sage);
+    padding: 0 4px;
+  }
+
+  .intro-body {
+    font-family: var(--font-body);
+    font-size: 16.5px;
+    font-weight: 400;
+    color: var(--brand-dark-soft);
+    line-height: 1.8;
+  }
+
+  /* ═══════════════════════════════════ RESPONSIBILITY */
+  .responsibility-section {
+    background: linear-gradient(180deg, var(--brand-cream) 0%, #F2ECE4 100%);
+    padding: 60px 50px;
+    position: relative;
+    border-top: 1px solid rgba(212, 163, 150, 0.2);
+    border-bottom: 1px solid rgba(212, 163, 150, 0.2);
+  }
+
+  .resp-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .resp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .resp-card {
+    background: var(--brand-white);
+    border: 1px solid rgba(169, 186, 157, 0.35);
+    padding: 36px 24px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(61, 53, 51, 0.03);
+    position: relative;
+  }
+
+  .resp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 30px; left: 30px;
+    height: 3px;
+    background: var(--brand-rose-light);
+    border-radius: 0 0 4px 4px;
+  }
+
+  .resp-icon {
+    font-size: 32px;
+    margin-bottom: 18px;
+    display: inline-block;
+    background: var(--brand-rose-pale);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+  }
+
+  .resp-card h3 {
+    font-family: var(--font-handwriting); /* כותרות כרטיסים בכתב יד מחבר */
+    font-size: 32px;
+    color: var(--brand-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .resp-card p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--brand-dark-soft);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ═══════════════════════════════════ DETAILS BAR */
+  .details-bar {
+    background: linear-gradient(90deg, var(--brand-rose), var(--brand-rose-light));
+    padding: 16px 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .detail-item {
+    text-align: center;
+  }
+
+  .detail-num {
+    font-family: var(--font-handwriting); /* מספרים/תגיות בכתב יד גדול */
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    line-height: 1;
+  }
+
+  .detail-label {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--brand-dark);
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .detail-sep {
+    width: 1px;
+    height: 36px;
+    background: rgba(61, 53, 51, 0.2);
+  }
+
+  /* ═══════════════════════════════════ SYLLABUS */
+  .syllabus-section {
+    background: var(--brand-cream);
+    padding: 52px 60px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-header-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--brand-rose), transparent);
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    white-space: nowrap;
+  }
+
+  .section-title-accent {
+    font-family: var(--font-handwriting); /* נגיעה של כתב יד בכותרת הסילבוס */
+    font-size: 42px;
+    color: var(--brand-rose);
+    margin-right: 6px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  .syllabus-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--brand-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+
+  .syllabus-table th {
+    background: var(--brand-dark);
+    color: var(--brand-rose-light);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 18px;
+    text-align: right;
+  }
+
+  .syllabus-table td {
+    padding: 16px 18px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--brand-rose-pale);
+  }
+
+  .syllabus-table tr:nth-child(even) td {
+    background: rgba(212, 163, 150, 0.03);
+  }
+
+  .num-cell {
+    font-family: var(--font-handwriting);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--brand-rose);
+    width: 50px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .topic-cell {
+    font-weight: 600;
+    color: var(--brand-dark);
+    width: 220px;
+    line-height: 1.4;
+  }
+
+  .desc-cell {
+    color: var(--brand-dark-soft);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ═══════════════════════════════════ OUTCOMES */
+  .outcomes-section {
+    background: var(--brand-white);
+    padding: 52px 60px;
+    border-top: 1px solid var(--brand-rose-light);
+  }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .outcome-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid rgba(212, 163, 150, 0.2);
+    background: var(--brand-cream);
+    border-radius: 6px;
+  }
+
+  .outcome-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-rose);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .outcome-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--brand-dark-soft);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ═══════════════════════════════════ MUST SECTION */
+  .must-section {
+    background: linear-gradient(135deg, var(--brand-dark-soft) 0%, var(--brand-rose) 100%);
+    padding: 40px 60px;
+    text-align: center;
+    border-top: 3px solid var(--brand-sage);
+    border-bottom: 3px solid var(--brand-sage);
+  }
+
+  .must-title {
+    font-family: var(--font-handwriting); /* כותרת הנעה לפעולה אישית בכתב יד */
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--brand-white);
+    line-height: 1;
+  }
+
+  .must-body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  /* ═══════════════════════════════════ FOOTER */
+  .footer {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #2D2725 100%);
+    padding: 40px 60px;
+    text-align: center;
+    position: relative;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--brand-rose-light), var(--brand-rose), var(--brand-rose-light), transparent);
+  }
+
+  .footer-tagline {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--brand-rose-light);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .footer-sub {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+
+  .footer-ornament {
+    color: var(--brand-rose);
+    font-size: 18px;
+    letter-spacing: 6px;
+    margin-top: 20px;
+    opacity: 0.5;
+  }
+
+  @media print {
+    body { width: 100%; }
+  }
+</style>
+</head>
+<body data-html-import-id="html-import-0" data-template-id="__page-root">
+
+<!-- HERO -->
+<section class="hero" data-html-import-id="html-import-1">
+  <div class="hero-border-top" data-html-import-id="html-import-2"></div>
+  <div class="hero-inner" data-html-import-id="html-import-3">
+    <div class="container">
+      <img style="width: 210px; height: auto; margin-bottom: 5px; position: relative; z-index: 3;" src="picth.png" alt="רבדים">
+      <div class="hero-badge" data-html-import-id="html-import-4" data-template-id="div-0">קורס מקצועי מתקדם · 2026</div>
+    </div>
+    <h1 class="hero-title" data-html-import-id="html-import-5" data-template-id="h1-1">נוער<span data-html-import-id="html-import-6" data-template-id="span-3">בסיכוי</span></h1>
+    <div class="hero-divider" data-html-import-id="html-import-7"></div>
+    <p class="hero-sub" data-html-import-id="html-import-8" data-template-id="p-4">כלים מקצועיים לזיהוי, התערבות ובניית חוסן – מסע אל לב העשייה החינוכית-טיפולית</p>
+    <div class="hero-ornament" data-html-import-id="html-import-10" data-template-id="div-5">✦ ✦ ✦</div>
+  </div>
+  <div class="hero-border-bottom" data-html-import-id="html-import-11"></div>
+</section>
+
+<!-- INTRO / HOOK -->
+<section class="intro-section" data-html-import-id="html-import-12" data-template-id="section-6">
+  <p class="intro-lead" data-html-import-id="html-import-13" data-template-id="p-7">מה יקרה לנוער שלנו אם <em data-html-import-id="html-import-14" data-template-id="em-9">לא נפעל עכשיו?</em></p>
+  <p class="intro-body" data-html-import-id="html-import-15" data-template-id="p-10">מחקרים מראים שהתערבות מוקדמת ונכונה יכולה לשנות גורלות. ילד אחד שנפל בין הכיסאות, נער אחד שהרגיש שאין מי שרואה אותו – אלה לא סטטיסטיקות. אלה בני ובנות של משפחות בישראל, תלמידים בכיתות שלנו, ילדים של החברה שבנינו.<br><br>קורס זה נוצר עבור כל מי שנוגע בחיים של ילדים ונוער – <strong data-html-import-id="html-import-18" data-template-id="strong-13">הורים, אנשי חינוך, יועצים, עובדים סוציאליים, מדריכים ומנהלים</strong> – ומאמין שלו יש תפקיד בעיצוב עתידם. כי לכל אחד מאיתנו יש כוח לשנות חיים, אם רק יידע איך.</p>
+</section>
+
+<!-- RESPONSIBILITY SECTION -->
+<section class="responsibility-section" data-html-import-id="html-import-19">
+  <h2 class="resp-title" data-html-import-id="html-import-20" data-template-id="h2-15">האחריות שלנו · כהורים · כחברה · כאנשי חינוך</h2>
+  <div class="resp-grid" data-html-import-id="html-import-21">
+    
+    <div class="resp-card" data-html-import-id="html-import-22" data-template-id="div-16">
+      <div class="resp-icon" data-html-import-id="html-import-23" data-template-id="span-17">👨‍👩‍👧</div>
+      <h3 data-html-import-id="html-import-24" data-template-id="h3-18">כהורים</h3>
+      <p data-html-import-id="html-import-25" data-template-id="p-19">הבנת הסימנים המוקדמים, יצירת קשר מטיב, ובניית בית שהוא מקלט בטוח לכל ילד.</p>
+    </div>
+
+    <div class="resp-card" data-html-import-id="html-import-26" data-template-id="div-20">
+      <div class="resp-icon" data-html-import-id="html-import-27" data-template-id="span-21">🏫</div>
+      <h3 data-html-import-id="html-import-28" data-template-id="h3-22">כאנשי חינוך</h3>
+      <p data-html-import-id="html-import-29" data-template-id="p-23">זיהוי מוקדם, התערבות מדויקת וסביבה בית-ספרית שמחזקת במקום לפגוע.</p>
+    </div>
+
+    <div class="resp-card" data-html-import-id="html-import-30" data-template-id="div-24">
+      <div class="resp-icon" data-html-import-id="html-import-31" data-template-id="span-25">🌍</div>
+      <h3 data-html-import-id="html-import-32" data-template-id="h3-26">כחברה</h3>
+      <p data-html-import-id="html-import-33" data-template-id="p-27">נוער בסיכון הוא לא בעיה של משפחות בודדות – הוא אחריות קולקטיבית שמצריכה מענה קולקטיבי.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MUST ATTEND -->
+<section class="must-section" data-html-import-id="html-import-34">
+  <div class="must-title" data-html-import-id="html-import-35" data-template-id="div-28">✦ &nbsp; קורס חובה שאסור לוותר עליו &nbsp; ✦</div>
+  <p class="must-body" data-html-import-id="html-import-36" data-template-id="p-29">14 מפגשים שישנו את הדרך שבה אתם רואים, מבינים ופועלים עם נוער.<br>ידע שאפשר ליישם כבר מחר בבוקר – בכיתה, בבית, בקהילה.</p>
+</section>
+
+<!-- DETAILS BAR -->
+<div class="details-bar" data-html-import-id="html-import-38" data-template-id="div-30">
+  <div class="detail-item" data-html-import-id="html-import-39">
+    <span class="detail-num" data-html-import-id="html-import-40" data-template-id="span-31">14</span>
+    <span class="detail-label" data-html-import-id="html-import-41" data-template-id="span-32">מפגשים</span>
+  </div>
+  <div class="detail-sep" data-html-import-id="html-import-42" data-template-id="div-33"></div>
+  <div class="detail-item" data-html-import-id="html-import-43">
+    <span class="detail-num" data-html-import-id="html-import-44" data-template-id="span-34">NLP</span>
+    <span class="detail-label" data-html-import-id="html-import-45" data-template-id="span-35">כלים מהשטח</span>
+  </div>
+  <div class="detail-sep" data-html-import-id="html-import-46" data-template-id="div-36"></div>
+  <div class="detail-item" data-html-import-id="html-import-47">
+    <span class="detail-num" data-html-import-id="html-import-48" data-template-id="span-37">תיאוריה</span>
+    <span class="detail-label" data-html-import-id="html-import-49" data-template-id="span-38">ויישום מעשי</span>
+  </div>
+  <div class="detail-sep" data-html-import-id="html-import-50" data-template-id="div-39"></div>
+  <div class="detail-item" data-html-import-id="html-import-51">
+    <span class="detail-num" data-html-import-id="html-import-52" data-template-id="span-40">מקצועי</span>
+    <span class="detail-label" data-html-import-id="html-import-53" data-template-id="span-41">ומעשיר</span>
+  </div>
+</div>
+
+<!-- SYLLABUS -->
+<section class="syllabus-section" data-html-import-id="html-import-54" data-template-id="section-42">
+  <div class="section-header" data-html-import-id="html-import-55">
+    <span class="section-title" data-html-import-id="html-import-56" data-template-id="span-43">תכנית <span class="section-title-accent" data-html-import-id="html-import-57" data-template-id="span-45">הלימודים</span></span>
+    <div class="section-header-line" data-html-import-id="html-import-58"></div>
+  </div>
+
+  <table class="syllabus-table" data-html-import-id="html-import-59">
+    <thead>
+      <tr>
+        <th style="width: 50px; text-align: center;" data-html-import-id="html-import-62" data-template-id="th-46">#</th>
+        <th style="width: 220px;" data-html-import-id="html-import-63" data-template-id="th-47">נושא</th>
+        <th data-html-import-id="html-import-64" data-template-id="th-48">תיאור</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-67" data-template-id="td-49">1</td>
+        <td class="topic-cell" data-html-import-id="html-import-68" data-template-id="td-50">מהו נוער בסיכון – הגדרות ותפיסות</td>
+        <td class="desc-cell" data-html-import-id="html-import-69" data-template-id="td-51">סקירת המושג, תפיסות עכשוויות ופרדיגמות מרכזיות בתחום</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-71" data-template-id="td-52">2</td>
+        <td class="topic-cell" data-html-import-id="html-import-72" data-template-id="td-53">גורמי סיכון</td>
+        <td class="desc-cell" data-html-import-id="html-import-73" data-template-id="td-54">זיהוי וניתוח גורמי סיכון ביולוגיים, משפחתיים, חברתיים וסביבתיים</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-75" data-template-id="td-55">3</td>
+        <td class="topic-cell" data-html-import-id="html-import-76" data-template-id="td-56">המודל האקולוגי של ברונפנברנר</td>
+        <td class="desc-cell" data-html-import-id="html-import-77" data-template-id="td-57">הבנת מעגלי ההשפעה על ההתפתחות: מיקרו, מזו, אקסו ומקרו סיסטם</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-79" data-template-id="td-58">4</td>
+        <td class="topic-cell" data-html-import-id="html-import-80" data-template-id="td-59">זיהוי, איתור מוקדם והתבוננות מקצועית</td>
+        <td class="desc-cell" data-html-import-id="html-import-81" data-template-id="td-60">כלים מעשיים לזיהוי נוער בסיכון וחשיבות ההתערבות בשלב מוקדם</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-83" data-template-id="td-61">5</td>
+        <td class="topic-cell" data-html-import-id="html-import-84" data-template-id="td-62">התערבות מוקדמת ומניעה</td>
+        <td class="desc-cell" data-html-import-id="html-import-85" data-template-id="td-63">אסטרטגיות התערבות, מניעה ראשונית, שניונית ושלישונית</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-87" data-template-id="td-64">6</td>
+        <td class="topic-cell" data-html-import-id="html-import-88" data-template-id="td-65">בניית חוסן</td>
+        <td class="desc-cell" data-html-import-id="html-import-89" data-template-id="td-66">תיאוריית החוסן, גורמים מגנים ודרכים לטיפוח עמידות אישית</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-91" data-template-id="td-67">7</td>
+        <td class="topic-cell" data-html-import-id="html-import-92" data-template-id="td-68">חיזוק משאבים</td>
+        <td class="desc-cell" data-html-import-id="html-import-93" data-template-id="td-69">מיפוי ופיתוח משאבים אישיים, משפחתיים וקהילתיים</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-94" data-template-id="td-70">8</td>
+        <td class="topic-cell" data-html-import-id="html-import-96" data-template-id="td-71">משפחה כהקשר סיכון וכחוסן</td>
+        <td class="desc-cell" data-html-import-id="html-import-97" data-template-id="td-72">דינמיקות משפחתוית, גורמי סיכון ומשאבים במשפחה</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-99" data-template-id="td-73">9</td>
+        <td class="topic-cell" data-html-import-id="html-import-100" data-template-id="td-74">בית ספר וקהילה – שייכות וקבוצת השווים</td>
+        <td class="desc-cell" data-html-import-id="html-import-101" data-template-id="td-75">תפקיד בית הספר, הקהילה וקבוצת השווים בהתפתחות ובסיכון</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-103" data-template-id="td-76">10</td>
+        <td class="topic-cell" data-html-import-id="html-import-104" data-template-id="td-77">קשר מטיב ותקשורת – שיטות NLP</td>
+        <td class="desc-cell" data-html-import-id="html-import-105" data-template-id="td-78">בניית קשר אמון עם נוער, כלי תקשורת מהנלפ: עיגון, מסגור ושיקוף</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-107" data-template-id="td-79">11</td>
+        <td class="topic-cell" data-html-import-id="html-import-108" data-template-id="td-80">דימוי עצמי בקרב נוער בסיכון</td>
+        <td class="desc-cell" data-html-import-id="html-import-109" data-template-id="td-81">הבנת תפיסת העצמי, השפעתה על ההתנהגות ודרכי חיזוקה</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-111" data-template-id="td-82">12</td>
+        <td class="topic-cell" data-html-import-id="html-import-112" data-template-id="td-83">חרם ודחייה חברתית</td>
+        <td class="desc-cell" data-html-import-id="html-import-113" data-template-id="td-84">זיהוי תופעות דחייה וחרם, השלכותיהן ואסטרטגיות התערבות</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-115" data-template-id="td-85">13</td>
+        <td class="topic-cell" data-html-import-id="html-import-116" data-template-id="td-86">טראומה ועבודה עם נפגעי טראומה</td>
+        <td class="desc-cell" data-html-import-id="html-import-117" data-template-id="td-87">הבנת הטראומה ומנגנוניה, גישות רגישות-טראומה ועיקרון הבטיחות</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-html-import-id="html-import-119" data-template-id="td-88">14</td>
+        <td class="topic-cell" data-html-import-id="html-import-120" data-template-id="td-89">ניתוחי מקרה ואינטגרציה</td>
+        <td class="desc-cell" data-html-import-id="html-import-121">יישום מעשי של הכלים הנלמדים, ניתוח אירועים מורכבים מהשטח וסיכום אינטגרטיבי של תכנית הקורס.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes-section">
+  <div class="section-header">
+    <span class="section-title">מה תקבלו <span class="section-title-accent">מהתכנית?</span></span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="outcomes-grid">
+    <div class="outcome-item">
+      <div class="outcome-dot"></div>
+      <div class="outcome-text">הבנה מעמיקה ומקצועית של עולם הנוער בסיכון ודרכי איתור מהירות בשטח.</div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-dot"></div>
+      <div class="outcome-text">כלים יישומיים מעולם ה-NLP ליצירת תקשורת מקדמת, בונה ומטיבה.</div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-dot"></div>
+      <div class="outcome-text">מודלים ייחודיים ומבוססי מחקר לבניית חוסן אישי ומערכתי בקרב מתבגרים.</div>
+    </div>
+    <div class="outcome-item">
+      <div class="outcome-dot"></div>
+      <div class="outcome-text">יכולת ניתוח מקרים מורכבים והתאמת תכניות מניעה והתערבות מדויקות.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-tagline">רבדים - בונים קומה חדשה יחד</div>
+  <div class="footer-sub">כל הזכויות שמורות © קורס נוער בסיכוי מקצועי 2026</div>
+  <div class="footer-ornament">✦ ✦ ✦</div>
+</footer>
+
+</body>
+</html>

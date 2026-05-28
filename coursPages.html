@@ -1,0 +1,538 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>רבדים | הקורסים שלנו</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --rose:#D4A396;
+    --rose-light:#EAD3CE;
+    --rose-soft:#F8F1EE;
+    --sage:#A9BA9D;
+    --dark:#3D3533;
+    --cream:#FAF7F2;
+    --white:#ffffff;
+
+    --title-font:'Frank Ruhl Libre', serif;
+    --body-font:'Varela Round', sans-serif;
+}
+
+body{
+    font-family:var(--body-font);
+    background:var(--cream);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top right, rgba(212,163,150,0.22), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(169,186,157,0.18), transparent 30%),
+    linear-gradient(145deg,#ffffff 0%, #f8f3f1 50%, #f1e7e3 100%);
+    
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:800px;
+    height:800px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.55);
+    filter:blur(10px);
+    top:-300px;
+    left:-200px;
+}
+
+.hero-inner{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:1250px;
+    padding:70px 40px;
+}
+
+.top-badge{
+    display:inline-block;
+    padding:10px 24px;
+    border:1px solid var(--rose);
+    border-radius:50px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(8px);
+    color:var(--dark);
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-family:var(--title-font);
+    font-size:88px;
+    line-height:1;
+    color:var(--dark);
+    margin-bottom:24px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:var(--rose);
+}
+
+.hero p{
+    max-width:650px;
+    font-size:20px;
+    line-height:1.9;
+    color:#5d5553;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    transition:0.35s;
+    font-size:15px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--rose),#c48d7f);
+    color:white;
+    box-shadow:0 10px 30px rgba(212,163,150,0.3);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-secondary{
+    border:1px solid rgba(61,53,51,0.15);
+    background:white;
+    color:var(--dark);
+}
+
+.btn-secondary:hover{
+    background:var(--rose-soft);
+}
+
+/* ================= COURSES ================= */
+
+.courses{
+    padding:120px 40px 100px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:var(--title-font);
+    font-size:54px;
+    color:var(--dark);
+    margin-bottom:18px;
+}
+
+.section-title p{
+    color:#6a625f;
+    font-size:18px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    max-width:1300px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.04);
+    
+    transition:0.45s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-top{
+    height:220px;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-top::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom,transparent,rgba(0,0,0,0.25));
+}
+
+.card-top-1{
+    background:
+    linear-gradient(135deg,#e8d1cb,#d4a396);
+}
+
+.card-top-2{
+    background:
+    linear-gradient(135deg,#d7e3cf,#a9ba9d);
+}
+
+.card-top-3{
+    background:
+    linear-gradient(135deg,#f1dfd7,#d6b1a5);
+}
+
+.card-icon{
+    position:absolute;
+    top:28px;
+    right:28px;
+    width:72px;
+    height:72px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    color:white;
+}
+
+.card-content{
+    padding:34px 30px 34px;
+}
+
+.card-category{
+    color:var(--rose);
+    font-size:13px;
+    letter-spacing:1px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.card h3{
+    font-family:var(--title-font);
+    font-size:34px;
+    line-height:1.2;
+    margin-bottom:16px;
+    color:var(--dark);
+}
+
+.card p{
+    font-size:15px;
+    line-height:1.9;
+    color:#5e5755;
+    margin-bottom:28px;
+}
+
+.features{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:28px;
+}
+
+.feature{
+    background:var(--rose-soft);
+    padding:8px 14px;
+    border-radius:40px;
+    font-size:13px;
+    color:var(--dark);
+}
+
+.card-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:700;
+    transition:0.3s;
+}
+
+.card-btn:hover{
+    gap:16px;
+    color:var(--rose);
+}
+
+/* ================= STRIP ================= */
+
+.strip{
+    margin-top:100px;
+    background:linear-gradient(135deg,var(--dark),#26211f);
+    padding:80px 40px;
+    text-align:center;
+}
+
+.strip h2{
+    color:white;
+    font-family:var(--title-font);
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.strip p{
+    color:rgba(255,255,255,0.75);
+    font-size:18px;
+    line-height:1.9;
+    max-width:800px;
+    margin:auto;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    padding:40px;
+    text-align:center;
+    background:#221e1d;
+}
+
+.footer-logo{
+    font-family:var(--title-font);
+    color:var(--rose-light);
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:rgba(255,255,255,0.4);
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:58px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.strip h2{
+    font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="top-badge">
+            מרכז ההכשרות של רבדים · קורסים מקצועיים
+        </div>
+
+        <h1>
+            הקורסים של <span>רבדים</span>
+        </h1>
+
+        <p>
+            תכניות עומק מקצועיות לאנשי חינוך, הורים ואנשי טיפול.
+            שילוב בין ידע עדכני, כלים יישומיים ועיצוב חווייתי ברמה גבוהה.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">לצפייה בקורסים</a>
+            <a href="#" class="btn btn-secondary">יצירת קשר</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COURSES -->
+
+<section class="courses">
+
+    <div class="section-title">
+        <h2>הקורסים שלנו</h2>
+        <p>למידה מקצועית · חווייתית · מעשית</p>
+    </div>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <div class="card-top card-top-1">
+                <div class="card-icon">🧠</div>
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-category">
+                    קורס מקצועי
+                </div>
+
+                <h3>
+                    ויסות רגשי
+                </h3>
+
+                <p>
+                    הבנת מנגנוני רגשות, פיתוח כלים לוויסות עצמי, חיזוק חוסן רגשי ועבודה יישומית עם ילדים ובני נוער.
+                </p>
+
+                <div class="features">
+                    <div class="feature">תרגול מעשי</div>
+                    <div class="feature">מודלים מקצועיים</div>
+                    <div class="feature">כלים יישומיים</div>
+                </div>
+
+                <a href="Visut.html" class="card-btn">
+                    לפרטים נוספים ←
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <div class="card-top card-top-2">
+                <div class="card-icon">💬</div>
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-category">
+                    קורס מתקדם
+                </div>
+
+                <h3>
+                    NLP
+                </h3>
+
+                <p>
+                    שיטות תקשורת מתקדמות, שינוי דפוסי חשיבה, יצירת השפעה חיובית ובניית קשר משמעותי.
+                </p>
+
+                <div class="features">
+                    <div class="feature">שפת השפעה</div>
+                    <div class="feature">עיגון ומסגור</div>
+                    <div class="feature">תקשורת</div>
+                </div>
+
+                <a href="#" class="card-btn">
+                    לפרטים נוספים ←
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <div class="card-top card-top-3">
+                <div class="card-icon">🌍</div>
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-category">
+                    תכנית עומק
+                </div>
+
+                <h3>
+                    נוער בסיכוי
+                </h3>
+
+                <p>
+                    קורס מקצועי להבנת עולמות הסיכון, איתור מוקדם, בניית חוסן והתערבות מקצועית עם בני נוער.
+                </p>
+
+                <div class="features">
+                    <div class="feature">14 מפגשים</div>
+                    <div class="feature">התערבות</div>
+                    <div class="feature">חוסן</div>
+                </div>
+
+                <a href="NoarBesicui.html" class="card-btn">
+                    לפרטים נוספים ←
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STRIP -->
+
+<section class="strip">
+
+    <h2>
+        בונים עתיד מקצועי חדש
+    </h2>
+
+    <p>
+        אצל רבדים כל קורס נבנה מתוך מחשבה על חוויה מקצועית, עיצוב יוקרתי ותוכן שניתן לקחת ישר לעשייה בשטח.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        רבדים
+    </div>
+
+    <p>
+        כל הזכויות שמורות © 2026
+    </p>
+
+</footer>
+
+</body>
+</html>
+```
