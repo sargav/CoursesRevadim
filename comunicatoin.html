@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הגשר לקשר</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* פלטת צבעים מתוך קובץ המותג */
+      --logo-peach: #D19481;
+      /* ורוד-אפרסק חם מהלוגו */
+      --logo-peach-light: #F4EBE8;
+      /* ורדרד בהיר מאוד לרקעים */
+      --logo-mint: #8AA88E;
+      /* ירוק מנטה/זית עדין מהעלים */
+      --logo-mint-light: #EDF3EE;
+      /* ירוק מנטה בהיר נקי */
+
+      --text-main: #3A3533;
+      /* חום-אפור כהה ואלגנטי לטקסט קריא */
+      --text-muted: #6E6662;
+      /* גוון משני עדין */
+      --bg-main: #FAF8F7;
+      /* רקע כללי בהיר, נקי ואסתטי */
+      --white: #FFFFFF;
+
+      --font-heading: 'Amatic SC', cursive;
+      --font-body: 'Assistant', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      direction: rtl;
+      width: 794px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══════════════════════════════════ HERO SECTION (עיצוב חדש: חום-שוקולד עמוק ויוקרתי עם נגיעות אפרסק) */
+    .hero-container {
+      /* רקע כהה, עשיר ואלגנטי המעניק ניגודיות מרהיבה ומראה אקסקלוסיבי */
+      background: linear-gradient(135deg, #b4dbb9 0%, #3A3230 100%);
+      padding: 1.9rem;
+      position: relative;
+      border-bottom: 2px solid var(--logo-peach);
+      text-align: center;
+    }
+
+    .main-title {
+      font-family: var(--font-heading);
+      font-size: 94px;
+      font-weight: 700;
+      color: #FAF6F0;
+      /* צבע שמנת בהיר לקריאות מושלמת על הרקע הכהה */
+      line-height: 0.85;
+      margin-bottom: 8px;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .main-title span {
+      /* שימוש באפרסק מוזהב ובולט מתוך הלוגו */
+      color: var(--logo-peach);
+      display: block;
+      margin-top: 6px;
+    }
+
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      width: 150px;
+      height: auto;
+      /* הוספת פילטר עדין להבלטת הלוגו על הרקע הכהה */
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+    }
+
+    .badge-tag {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      color: #3A3230;
+      border: 1px solid var(--logo-peach);
+      padding: 5px 18px;
+      border-radius: 30px;
+      background-color: var(--logo-peach-light);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      letter-spacing: 0.5px;
+    }
+
+    /* קו מפריד עיצובי עדין ויוקרתי מתחת לכותרת */
+    .title-underline {
+      width: 75px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--logo-peach) 50%, transparent 100%);
+      margin: 22px auto;
+      border-radius: 2px;
+    }
+
+    .hero-border-top {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--logo-peach), transparent);
+      position: relative;
+      z-index: 2;
+    }
+
+    .sub-title {
+      font-size: 21px;
+      font-weight: 500;
+      color: #E6DDD9;
+      /* גוון בהיר רך לקריאות מקסימלית */
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.45;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-quote-box {
+      margin-top: 25px;
+      font-size: 15.5px;
+      font-style: italic;
+      color: var(--logo-peach);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ═══════════════════════════════════ QUESTIONS GRID */
+    .cards-section {
+      padding: 50px 45px 30px 45px;
+      background: var(--white);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .question-card {
+      background-color: var(--white);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(209, 148, 129, 0.15);
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .card-icon-wrap {
+      background-color: var(--logo-mint-light);
+      color: var(--logo-mint);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .question-card p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.45;
+      padding-top: 2px;
+    }
+
+    /* ═══════════════════════════════════ MAIN HOOK TEXT */
+    .text-manifesto {
+      padding: 40px 65px 50px 65px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .manifesto-heading {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      color: var(--logo-peach);
+      margin-bottom: 20px;
+    }
+
+    .manifesto-p {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    /* ═══════════════════════════════════ STATS BANNER */
+    .stats-banner {
+      background: linear-gradient(90deg, #b4dbb9 0%, #8aa88e 100%);
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-around;
+      color: var(--white);
+    }
+
+    .stat-block {
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: var(--font-heading);
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 13.5px;
+      font-weight: 600;
+      opacity: 0.95;
+      margin-top: 4px;
+    }
+
+    /* ═══════════════════════════════════ TIMELINE SYLLABUS */
+    .timeline-section {
+      padding: 55px 45px;
+      background: linear-gradient(135deg, #ebedeb 0%, #FAF8F7 50%, var(--logo-mint-light) 100%);
+    }
+
+    .section-title-modern {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      color: var(--text-main);
+      text-align: center;
+      margin-bottom: 45px;
+      position: relative;
+    }
+
+    .section-title-modern::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--logo-mint);
+      margin: 8px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    .timeline-container {
+      position: relative;
+      margin: 0 auto;
+      padding-right: 40px;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      right: 15px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--logo-peach) 0%, var(--logo-mint) 50%, var(--logo-peach) 100%);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .timeline-badge {
+      position: absolute;
+      right: -40px;
+      top: 4px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--white);
+      border: 2px solid var(--logo-peach);
+      color: var(--logo-peach);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .timeline-item:nth-child(even) .timeline-badge {
+      border-color: var(--logo-mint);
+      color: var(--logo-mint);
+    }
+
+    .timeline-content {
+      background-color: var(--white);
+      padding: 22px 26px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.015);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .timeline-header-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+      padding-bottom: 6px;
+    }
+
+    .timeline-topic {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .timeline-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════ CLEAN STANDARD COURSE FOOTER (סגירה הרמונית ותואמת) */
+    .footer {
+      /* גרדיאנט חום כהה עשיר ליצירת סגירה מושלמת ויוקרתית לדף */
+      background: linear-gradient(135deg, #b4dbb9 0%, #0c0c0c 100%);
+      padding: 45px 60px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      border-top: 3px solid var(--logo-peach);
+    }
+
+    .footer-sub {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: #FAF6F0;
+      /* טקסט בהיר וקריא על הרקע הכהה */
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .footer-sub strong {
+      color: #FFF;
+    }
+
+    .footer-quote-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .footer-quote-wrap span {
+      color: var(--logo-peach);
+      /* הבלטת הציטוט בגוון אפרסק חם */
+      font-family: var(--font-heading);
+      font-size: 36px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer-ornament {
+      color: var(--logo-peach);
+      font-size: 18px;
+      letter-spacing: 6px;
+      margin-top: 22px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero-border-top"></div>
+  <section class="hero-container">
+    <div class="hero-header">
+      <img class="brand-logo" src="picth.png" alt="רבדים">
+      <div class="badge-tag">קורס יישומי</div>
+    </div>
+
+    <div>
+      <h1 class="main-title">הגשר<span>לקשר</span></h1>
+      <div class="title-underline"></div>
+    </div>
+
+    <p class="sub-title">קורס מקצועי המקנה ידע וכלים מעשיים לתקשורת אפקטיבית</p>
+
+    <div class="hero-quote-box">
+
+    </div>
+  </section>
+  <div class="hero-border-top"></div>
+
+  <!-- QUESTIONS GRID -->
+  <section class="cards-section">
+    <div class="cards-grid">
+      <div class="question-card">
+        <div class="card-icon-wrap"><span class="material-symbols-outlined">help</span></div>
+        <p>קרה לך פעם שמישהו הגיב לדברייך בצורה לא מתאימה?</p>
+      </div>
+      <div class="question-card">
+        <div class="card-icon-wrap"><span class="material-symbols-outlined">bolt</span></div>
+        <p>האם תהית איך ניתן ליצור כימיה בקלות?</p>
+      </div>
+      <div class="question-card">
+        <div class="card-icon-wrap"><span class="material-symbols-outlined">hearing</span></div>
+        <p>מה קורה לנו ולסובבים אותנו שמקשיבים באמת?</p>
+      </div>
+      <div class="question-card">
+        <div class="card-icon-wrap"><span class="material-symbols-outlined">forum</span></div>
+        <p>איך מנהלים שיחה מורכבת בצורה מקדמת?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO TEXT -->
+  <section class="text-manifesto">
+    <h2 class="manifesto-heading">הכוח להשפיע בכל מעגלי החיים</h2>
+    <p class="manifesto-p">
+      הצטרפו לקורס מרתק, דינמי וחוויתי השופך אור על עולמן של מערכות היחסים הבין-אישיות והתוך-אישיות.
+      במהלך המפגשים נגלה יחד את הרבדים העמוקים של התקשורת האנושית , ונקבל כלים מעשיים להובלת תהליכי שינוי וצמיחה ברמה
+      האישית והמערכתית כאחד.
+      <br><br>
+    </p>
+  </section>
+
+  <!-- STATS BANNER -->
+  <div class="stats-banner">
+    <div class="stat-block">
+      <div class="stat-val">14</div>
+      <div class="stat-lbl">מפגשים חוויתיים</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">NLP</div>
+      <div class="stat-lbl">טכניקות יישומיות</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">פרקטיקה</div>
+      <div class="stat-lbl">התנסות בכל שיעור</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE SYLLABUS -->
+  <section class="timeline-section">
+    <h2 class="section-title-modern">תכנית המפגשים והלמידה</h2>
+
+    <div class="timeline-container">
+
+      <!-- שיעור 1 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">1</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מבוא לתקשורת בשיטת NLP</div>
+          </div>
+          <p class="timeline-desc">פתיחה והכרות, מבוא לעולם ה-NLP, וכתיבת קונפליקט בתקשורת שחוסם אותי.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 2 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">2</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מהי תקשורת?</div>
+          </div>
+          <p class="timeline-desc">בסיס לתקשורת יעילה, זיהוי תגובות המחבלות בתקשורת ו-10 טכניקות "עשה" בתקשורת חיובית.
+          </p>
+        </div>
+      </div>
+
+      <!-- שיעור 3 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">3</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">ראפור (Rapport)</div>
+          </div>
+          <p class="timeline-desc">כיצד ליצור כימיה מהירה, חיבור מיידי ותקשורת מבוססת אמון וטובה עם הסובבים.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 4 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">4</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מודל התקשורת</div>
+          </div>
+          <p class="timeline-desc">הכרות עם מערכות הייצוג, כיצד נוצרת ומקודדת התקשורת במוח והגורמים בעלי השפעה על חיי
+            האדם.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 5 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">5</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מודל אפרת וממודל אליס</div>
+          </div>
+          <p class="timeline-desc">עובדה, פרשנות ומה שביניהם. זיהוי וניתוח פרשנויות מעצימות מול פרשנויות מחלישות.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 6 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">6</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">עמדות תפיסה וחילוף עמדות</div>
+          </div>
+          <p class="timeline-desc">כיצד לקבל נקודות מבט חדשות על קצר בתקשורת, פתרון קונפליקטים והבנת האחר באמצעות טכניקת
+            טיול עמדות.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 7 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">7</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מודל מאסלו וששת הצרכים</div>
+          </div>
+          <p class="timeline-desc">זיהוי הצרכים האישיים: צורכי חסך וצורכי גדילה. הבנת מודל ששת הצרכים של טוני רובינס
+            להבנת המניעים העמוקים שלנו.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 8 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">8</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">הקשבה מיטבית</div>
+          </div>
+          <p class="timeline-desc">חשיבות ההקשבה, כללי אצבע להקשבה איכותית וצעדים מעשיים לפיתוח הקשב כדי להפוך למקשיבים
+            טובים יותר.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 9 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">9</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">דיאלוג – אומנות השיח</div>
+          </div>
+          <p class="timeline-desc">מהו דיאלוג ומאפייניו, מה בין דיאלוג למריבה, ואיך לנהל שיחה קשה ומורכבת באופן אפקטיבי.
+          </p>
+        </div>
+      </div>
+
+      <!-- שיעור 10 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">10</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">עולם האמונות</div>
+          </div>
+          <p class="timeline-desc">מהן אמונות, מקורן בחיינו, והבחנה יסודית בין אמונות מעצימות לאמונות מגבילות.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 11 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">11</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">זיהוי רגשות</div>
+          </div>
+          <p class="timeline-desc">זיהוי הרגש האמיתי, 7 נזקים בריאותיים ונפשיים של רגשות מודחקים, ואיך להפוך רגש שלילי
+            למסר חיובי ומעצים.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 12 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">12</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">מסגור מחדש (Reframing)</div>
+          </div>
+          <p class="timeline-desc">טיפול באירועים מורכבים על ידי שינוי החוויה ונתינת פרשנות שונה ומקדמת לאותו אירוע.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 13 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">13</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">פתרון קונפליקטים וסמ"דים</div>
+          </div>
+          <p class="timeline-desc">כיצד המוח שלנו מקודד חוויות והשימוש בקודים אלו ליצירת שינוי רצוי ודרכים יישומיות
+            לפתרון בעיות.</p>
+        </div>
+      </div>
+
+      <!-- שיעור 14 -->
+      <div class="timeline-item">
+        <div class="timeline-badge">14</div>
+        <div class="timeline-content">
+          <div class="timeline-header-box">
+            <div class="timeline-topic">סיכום וצידה לדרך</div>
+          </div>
+          <p class="timeline-desc">חוויית דמיון מודרך, מעגל הגיבור, פתיחת מעטפות מתחילת הקורס וקבלת מסר שמלווה אותך
+            הלאה.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CLEAN STANDARD COURSE FOOTER -->
+  <footer class="footer">
+    <div class="footer-quote-wrap">
+      <span>"החלק החשוב ביותר בתקשורת הוא לשמוע את מה שלא נאמר"</span>
+    </div>
+    <div class="footer-sub">
+      לפרטים נוספים צרו קשר –<br><br>
+      רחלי גרינבאום &nbsp;|&nbsp; 052-717-4783<br><br>
+      grin5804783@gmail.com
+    </div>
+    <div class="footer-ornament">◆ ◆ ◆</div>
+  </footer>
+
+</body>
+
+</html>
