@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>רבדים | משתתפות הקורס משתפות</title>
+
+<!-- טעינת הגופנים מהשפה העיצובית המשותפת -->
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* פלטת הגוונים הרכה, הנשית והיוקרתית של דף הבית */
+    --soft-rose-gradient-start: #FAF5F3; 
+    --soft-rose-gradient-end: #F0E2DE;   
+    --soft-sage: #CBD9CC;       
+    
+    /* צבעי הטקסט והכותרות המעודכנים */
+    --title-color: #A37A58;              /* גוון חול-זהב עמוק ויוקרתי */
+    --text-main: #423735;                /* חום-אפרפר כהה ועדין לטקסט הרץ */
+    --light-cream: #FCFAF7;     
+    --white: #ffffff;
+    
+    /* הגופנים המשולבים */
+    --title-font: 'Amatic SC', cursive;
+    --body-font: 'Assistant', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--light-cream);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* קונטיינר מרכזי מוגבל ברוחב לאסתטיקה מירבית */
+.page-wrapper {
+    max-width: 900px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--soft-rose-gradient-start) 0%, var(--soft-rose-gradient-end) 100%);
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(163, 122, 88, 0.06);
+    padding: 50px 40px;
+    position: relative;
+    border: 1px solid rgba(240, 226, 222, 0.5);
+}
+
+/* אזור הלוגו מעל הכותרת */
+.logo-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.logo-area img {
+    height: 130px; 
+    width: auto;
+    display: block;
+}
+
+/* אזור כותרת הדף */
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(163, 122, 88, 0.15);
+    padding-bottom: 25px;
+}
+
+.subtitle-badge {
+    font-family: var(--body-font);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    opacity: 0.7;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.header-section h1 {
+    font-family: var(--title-font);
+    font-size: 50px;
+    color: var(--title-color);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.header-section p {
+    font-family: var(--body-font);
+    font-size: 16px;
+    color: var(--text-main);
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* מבנה רשת להצגת כרטיסיות השיתופים */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* עיצוב כרטיסיית שיתוף בודדת */
+.testimonial-card {
+    background: var(--white);
+    padding: 24px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(163, 122, 88, 0.02);
+    border: 1px solid rgba(240, 226, 222, 0.4);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(163, 122, 88, 0.06);
+    border-color: var(--title-color);
+}
+
+/* עיצוב המרקר/גרש תחילת משפט */
+.quote-mark {
+    font-family: var(--title-font);
+    font-size: 40px;
+    color: var(--title-color);
+    line-height: 0.7;
+    user-select: none;
+}
+
+.testimonial-text {
+    font-family: var(--body-font);
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--text-main);
+    font-weight: 400;
+}
+
+/* כפתור חזרה לדף הבית ותחתית הדף */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(163, 122, 88, 0.15);
+    padding-top: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    font-size: 15px;
+    color: var(--text-main);
+}
+
+.contact-item a {
+    color: var(--title-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--title-color);
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid rgba(163, 122, 88, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--title-color);
+    color: var(--white);
+    box-shadow: 0 6px 15px rgba(163, 122, 88, 0.2);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 600px) {
+    .page-wrapper {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    .logo-area img {
+        height: 100px;
+    }
+    .header-section h1 {
+        font-size: 38px;
+    }
+    .testimonial-card {
+        padding: 18px 20px;
+    }
+    .testimonial-text {
+        font-size: 15px;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- רכיב הלוגו עם מנגנוני הגיבוי המלאים שלך -->
+    <div class="logo-area">
+        <img src="picth.png" alt="רבדים" onerror="this.src='picth.jpg'; this.onerror=function(){this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:var(--title-font); font-size:42px; font-weight:700; color:var(--title-color);\'>רבדים</span>';};">
+    </div>
+
+    <!-- ראש העמוד -->
+    <header class="header-section">
+        <h1>משתתפות הקורס משתפות</h1>
+        <p>ציטוטים אותנטיים מתוך משובים בסיום הלמידה</p>
+    </header>
+
+    <!-- רשימת השיתופים והעדויות מהדף שהעלת -->
+    <main class="testimonials-grid">
+        
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">קורס מעצים, מדהים, מעשיר, מקדם ונותן המון.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">ארגז כלים מדהים לכל סיטואציה בחיים.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">שיטה משנת חיים. לדעת איך לעבוד עם המוח שלנו כדי ליצור שינוי מיטבי.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">קורס בסיסי קריטי ויעיל לכל דבר בחיים, אפילו אם לא רוצים לעבוד בזה.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">הוא לא שיטת טיפול הוא כלי לחיים, שווה ללמוד אפילו לא כדי לטפל אלא בשביל עצמה.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">עולם שלם, ממקד ולא סתם דיבורים. זו שיטה שבאמת עובדת, עם עבודה עצמית זה עובד ומשתלם.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">NLP הוא לא שיטת טיפול הוא כלי לחיים טובים יותר. הוא עוזר להוציא את המקסימום מהחיים האישיים שלנו. מאפשר להכיר טוב יותר את בני האדם, לכבד ולאהוב אותם.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">אני ממליצה לרוץ ללמוד NLP כי זה מסדר לך את הראש כיצד לחיות נכון, כיצד לנהל רגשות בצורה ברורה ומרגיעה.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">הכי משמעותי בעבורי היה שינוי החשיבה, להבין את עצמי, מה עובר עלי, לא להכליל, לדייק את הבעיה ויש פתרון לכל דבר.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">ההסתכלות והמבט שלי השתנו, פיתחתי צורת חשיבה שונה. למדתי לחשוב שלא כולם חושבים כמוני, והמפה והשטח שונים מהמציאות.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">NLP זה לגלות אמונות מגבילות ולהפוך אותן לאמונות מקדמות, זה להבין מה עוצר אותנו בחיים ואיך אנחנו יכולות להתקדם.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">ההבנה שלי כלפי עצמי וכלפי הסביבה השתפרה והבנתי שכל אחד חי את חייו ומגיב בצורה אחרת, לפי המפה הפנימית שלו. כולנו עושים את הכי טוב בהתאם לזמן וליכולות שלנו.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">הכי עזר לי להכיר את הרגשות שלי, להבין אותם ולתת להם מקום. ההסתכלות שלי על החיים, על אנשים אחרים ועל עצמנו השתנתה. לדעת שכל מה שאנו עושות זה הכי טוב שיש, ולכל הפחות הכי טוב בזמן הסיטואציה.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">הדבר המשמעותי שהשתפר זה התקשורת שלי עם בני אדם. ב-NLP יש טכניקות בסיסיות לחיים בכלל ולתקשורת בפרט, ולהיות אפקטיבית עם הסביבה שלי.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">למדתי להקשיב לזולת, להיכנס לנעליים של האחר ולהבין אותו טוב יותר, לדעת שלכל אדם יש כוונה חיובית ושלא חייבים להגיב מיד.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p class="testimonial-text">הכל היה מושלם בצורה פנטסטית, החומר מסודר, מאורגן, מובן ונקלט היטב. ברור ורצוי ללמוד! המשיכי להפיץ את הקורס המחכים כמה שאפשר.</p>
+        </div>
+
+    </main>
+
+    <!-- תחתית הדף עם פרטי קשר וכפתור חזרה -->
+    <footer class="footer-section">
+        <a href="coursPages.html" class="back-btn">
+            <span>→</span> חזרה לדף הבית
+        </a>
+        <div class="contact-container">
+            <div class="contact-item">טלפון: <a href="tel:0527174783">052-717-4783</a></div>
+            <div class="contact-item">מייל: <a href="mailto:Revadim200@gmail.com">Revadim200@gmail.com</a></div>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
