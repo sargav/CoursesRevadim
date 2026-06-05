@@ -1,569 +1,596 @@
 <!doctype html>
 <html lang="he" dir="rtl">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מרכז רבדים – קוד החוסן | המפתח לוויסות רגשי</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרכז רבדים – קוד החוסן | המפתח לוויסות רגשי</title>
 
-<!-- טעינת הגופנים והאייקונים מהשפה העיצובית המשותפת -->
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <!-- טעינת הגופנים והאייקונים מהשפה העיצובית המשותפת -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  :root {
-    /* פלטת צבעים חדשה: בורדו עמוק וחול חם */
-    --color-primary: #6B2D38;       /* בורדו-יין עמוק, יוקרתי ומשדר יציבות וחוסן */
-    --color-primary-light: #F7EFF1; /* גוון בהיר מאוד של הבורדו לרקעים רכים */
-    --color-secondary: #C49A73;     /* גוון חול-זהב חם ועמום, מסמל טבע ורוגע */
-    --color-secondary-light: #F9F5F0; /* גוון חול-שמנת בהיר נקי */
-    
-    --text-main: #332B2C;        /* חום-שוקולד כהה מאוד וקריא */
-    --text-muted: #665759;       /* גוון משני עדין לטקסט */
-    --bg-main: #FAF8F5;          /* רקע כללי בהיר וחם בגוון פנינה-שמנת */
-    --white: #FFFFFF;
-    
-    --font-heading: 'Amatic SC', cursive;
-    --font-body: 'Assistant', sans-serif;
-  }
+        :root {
+            /* פלטת צבעים חדשה: בורדו עמוק וחול חם */
+            --color-primary: #6B2D38;
+            /* בורדו-יין עמוק, יוקרתי ומשדר יציבות וחוסן */
+            --color-primary-light: #F7EFF1;
+            /* גוון בהיר מאוד של הבורדו לרקעים רכים */
+            --color-secondary: #C49A73;
+            /* גוון חול-זהב חם ועמום, מסמל טבע ורוגע */
+            --color-secondary-light: #F9F5F0;
+            /* גוון חול-שמנת בהיר נקי */
 
-  body {
-    font-family: var(--font-body);
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    direction: rtl;
-    width: 794px;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
-  }
+            --text-main: #332B2C;
+            /* חום-שוקולד כהה מאוד וקריא */
+            --text-muted: #665759;
+            /* גוון משני עדין לטקסט */
+            --bg-main: #FAF8F5;
+            /* רקע כללי בהיר וחם בגוון פנינה-שמנת */
+            --white: #FFFFFF;
 
-  /* ═══════════════════════════════════ HERO SECTION */
-  .hero-container {
-    background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
-    padding: 65px 45px;
-    position: relative;
-    border-bottom: 1px solid rgba(107, 45, 56, 0.15);
-    text-align: center;
-  }
+            --font-heading: 'Amatic SC', cursive;
+            --font-body: 'Assistant', sans-serif;
+        }
 
-  .hero-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-  }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            direction: rtl;
+            width: 794px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
 
-  .brand-logo {
-    width: 150px;
-    height: auto;
-  }
+        /* ═══════════════════════════════════ HERO SECTION */
+        .hero-container {
+            background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
+            padding: 65px 45px;
+            position: relative;
+            border-bottom: 1px solid rgba(107, 45, 56, 0.15);
+            text-align: center;
+        }
 
-  .badge-tag {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    padding: 4px 16px;
-    border-radius: 30px;
-    background-color: rgba(107, 45, 56, 0.05);
-    letter-spacing: 0.5px;
-  }
+        .hero-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
 
-  /* כותרת במראה פתוח עם אפקט מעבר צבעים זורם */
-  .title-holder-open {
-    display: block;
-    margin-bottom: 15px;
-  }
+        .brand-logo {
+            width: 115px;
+            height: auto;
+        }
 
-  .main-title-text {
-    font-family: var(--font-heading);
-    font-size: 84px;
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: 1px;
-    background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-  }
+        .badge-tag {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            padding: 4px 16px;
+            border-radius: 30px;
+            background-color: rgba(107, 45, 56, 0.05);
+            letter-spacing: 0.5px;
+        }
 
-  /* קו מפריד עיצובי עדין מתחת לכותרת */
-  .title-underline {
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-secondary);
-    margin: 15px auto 25px auto;
-    border-radius: 2px;
-    opacity: 0.6;
-  }
+        /* כותרת במראה פתוח עם אפקט מעבר צבעים זורם */
+        .title-holder-open {
+            display: block;
+            margin-bottom: 15px;
+        }
 
-  .sub-title {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text-main);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
-  }
+        .main-title-text {
+            font-family: var(--font-heading);
+            font-size: 84px;
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: 1px;
+            background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
 
-  .hero-quote-box {
-    margin-top: 25px;
-    font-size: 15.5px;
-    font-style: italic;
-    color: var(--color-secondary);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  .hero-border-bottom{
-    --brand-primary: #1A365D;
-    --brand-secondary: #2A6F97;
-    --brand-accent: #C6A052;
-    --brand-accent-light: #E9D8A6;
-    --brand-bg-light: #F4F7F6;
-    --brand-dark: #1E293B;
-    --brand-dark-soft: #475569;
-    --brand-white: #FFFFFF;
-    --font-heading: 'Amatic SC', cursive;
-    --font-body: 'Assistant', sans-serif;
-    font-family: var(--font-body);
-    color: var(--brand-dark);
-    direction: rtl;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--brand-accent), #854d49, var(--brand-accent), transparent);
-    position: relative;
-    z-index: 2;
-  }
+        /* קו מפריד עיצובי עדין מתחת לכותרת */
+        .title-underline {
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-secondary);
+            margin: 15px auto 25px auto;
+            border-radius: 2px;
+            opacity: 0.6;
+        }
 
-  /* ═══════════════════════════════════ CORE DEVELOPMENTS GRID */
-  .cards-section {
-    padding: 50px 45px 30px 45px;
-    background: var(--white);
-  }
+        .sub-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-main);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
 
-  .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+        .hero-quote-box {
+            margin-top: 25px;
+            font-size: 15.5px;
+            font-style: italic;
+            color: var(--color-secondary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-  .question-card {
-    background-color: var(--white);
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid rgba(107, 45, 56, 0.15);
-    display: flex;
-    gap: 15px;
-    align-items: center;
-  }
+        .hero-border-bottom {
+            --brand-primary: #1A365D;
+            --brand-secondary: #2A6F97;
+            --brand-accent: #C6A052;
+            --brand-accent-light: #E9D8A6;
+            --brand-bg-light: #F4F7F6;
+            --brand-dark: #1E293B;
+            --brand-dark-soft: #475569;
+            --brand-white: #FFFFFF;
+            --font-heading: 'Amatic SC', cursive;
+            --font-body: 'Assistant', sans-serif;
+            font-family: var(--font-body);
+            color: var(--brand-dark);
+            direction: rtl;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--brand-accent), #854d49, var(--brand-accent), transparent);
+            position: relative;
+            z-index: 2;
+        }
 
-  .card-icon-wrap {
-    background-color: var(--color-secondary-light);
-    color: var(--color-secondary);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
+        /* ═══════════════════════════════════ CORE DEVELOPMENTS GRID */
+        .cards-section {
+            padding: 50px 45px 30px 45px;
+            background: var(--white);
+        }
 
-  .question-card p {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-main);
-    line-height: 1.4;
-  }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-  /* ═══════════════════════════════════ MAIN HOOK TEXT */
-  .text-manifesto {
-    padding: 40px 65px 50px 65px;
-    background: var(--white);
-    text-align: center;
-  }
+        .question-card {
+            background-color: var(--white);
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid rgba(107, 45, 56, 0.15);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
 
-  .manifesto-heading {
-    font-family: var(--font-heading);
-    font-size: 44px;
-    color: var(--color-primary);
-    margin-bottom: 20px;
-  }
+        .card-icon-wrap {
+            background-color: var(--color-secondary-light);
+            color: var(--color-secondary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-  .manifesto-p {
-    font-size: 16.5px;
-    color: var(--text-muted);
-    line-height: 1.75;
-    text-align: justify;
-  }
+        .question-card p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
 
-  /* ═══════════════════════════════════ METHODS BANNER */
-  .stats-banner {
-    background: linear-gradient(90deg, var(--color-primary) 0%, #853D4A 100%);
-    padding: 22px 20px;
-    display: flex;
-    justify-content: space-around;
-    color: var(--white);
-    gap: 10px;
-  }
+        /* ═══════════════════════════════════ MAIN HOOK TEXT */
+        .text-manifesto {
+            padding: 40px 65px 50px 65px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .manifesto-heading {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .manifesto-p {
+            font-size: 16.5px;
+            color: var(--text-muted);
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        /* ═══════════════════════════════════ METHODS BANNER */
+        .stats-banner {
+            background: linear-gradient(90deg, var(--color-primary) 0%, #853D4A 100%);
+            padding: 22px 20px;
+            display: flex;
+            justify-content: space-around;
+            color: var(--white);
+            gap: 10px;
+        }
 
 
-  .stat-block { text-align: center; flex: 1; }
+        .stat-block {
+            text-align: center;
+            flex: 1;
+        }
 
-  .stat-val {
-    font-family: var(--font-heading);
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.5px;
-  }
+        .stat-val {
+            font-family: var(--font-heading);
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
 
-  .stat-lbl {
-    font-size: 12px;
-    font-weight: 600;
-    opacity: 0.95;
-    margin-top: 4px;
-    white-space: nowrap;
-  }
+        .stat-lbl {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.95;
+            margin-top: 4px;
+            white-space: nowrap;
+        }
 
-  /* ═══════════════════════════════════ CONTENT SECTION WITH GRADIENT BACKGROUND */
-  .timeline-section {
-    padding: 55px 45px;
-    /* רקע מתחלף עדין המשלב בין הבורדו לחול החם */
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, #FAF8F5 50%, var(--color-secondary-light) 100%);
-  }
+        /* ═══════════════════════════════════ CONTENT SECTION WITH GRADIENT BACKGROUND */
+        .timeline-section {
+            padding: 55px 45px;
+            /* רקע מתחלף עדין המשלב בין הבורדו לחול החם */
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, #FAF8F5 50%, var(--color-secondary-light) 100%);
+        }
 
-  .section-title-modern {
-    font-family: var(--font-heading);
-    font-size: 48px;
-    color: var(--text-main);
-    text-align: center;
-    margin-bottom: 45px;
-    position: relative;
-  }
+        .section-title-modern {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+        }
 
-  .section-title-modern::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--color-secondary);
-    margin: 8px auto 0 auto;
-    border-radius: 2px;
-  }
+        .section-title-modern::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--color-secondary);
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
 
-  .methods-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 650px;
-    margin: 0 auto;
-  }
+        .methods-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
 
-  .method-item-box {
-    background-color: var(--white);
-    padding: 24px 28px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.015);
-    border: 1px solid rgba(107, 45, 56, 0.1);
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
+        .method-item-box {
+            background-color: var(--white);
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.015);
+            border: 1px solid rgba(107, 45, 56, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
 
-  .method-number-badge {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--color-secondary-light);
-    color: var(--color-secondary);
-    font-family: var(--font-heading);
-    font-size: 22px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
+        .method-number-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--color-secondary-light);
+            color: var(--color-secondary);
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
 
-  .method-item-box:nth-child(even) .method-number-badge {
-    background-color: rgba(107, 45, 56, 0.1);
-    color: var(--color-primary);
-  }
+        .method-item-box:nth-child(even) .method-number-badge {
+            background-color: rgba(107, 45, 56, 0.1);
+            color: var(--color-primary);
+        }
 
-  .method-text-content h4 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 6px;
-  }
+        .method-text-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
 
-  .method-text-content p {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
+        .method-text-content p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
 
-  /* ═══════════════════════════════════ HIGHLIGHT SUMMARY */
-  .bottom-blocks {
-    padding: 50px 45px 50px 45px;
-    background-color: var(--white);
-  }
+        /* ═══════════════════════════════════ HIGHLIGHT SUMMARY */
+        .bottom-blocks {
+            padding: 50px 45px 50px 45px;
+            background-color: var(--white);
+        }
 
-  .block-box {
-    border: 1px solid var(--color-primary-light);
-    background-color: var(--bg-main);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-  }
+        .block-box {
+            border: 1px solid var(--color-primary-light);
+            background-color: var(--bg-main);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
 
-  .block-title {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    color: var(--color-primary);
-    margin-bottom: 12px;
-  }
+        .block-title {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
 
-  .block-desc {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-main);
-    line-height: 1.5;
-  }
+        .block-desc {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
 
-  /* ═══════════════════════════════════ CLEAN STANDARD COURSE FOOTER */
-     /* .footer {
+        /* ═══════════════════════════════════ CLEAN STANDARD COURSE FOOTER */
+        /* .footer {
       /* גרדיאנט חום כהה עשיר ליצירת סגירה מושלמת ויוקרתית לדף */
-      /* background: linear-gradient(135deg, #b4dbb9 0%, #0c0c0c 100%);
+        /* background: linear-gradient(135deg, #b4dbb9 0%, #0c0c0c 100%);
       padding: 45px 60px;
       text-align: center;
       position: relative;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
       border-top: 3px solid var(--logo-peach);
-    } */ */
+    } */
+        */ .footer-sub {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: #c6a052;
+            /* טקסט בהיר וקריא על הרקע הכהה */
+            font-weight: 400;
+            line-height: 1.7;
+        }
 
-    .footer-sub {
-      font-family: var(--font-body);
-      font-size: 15px;
-      color:#c6a052;
-      /* טקסט בהיר וקריא על הרקע הכהה */
-      font-weight: 400;
-      line-height: 1.7;
-    }
+        .footer-sub strong {
+            color: #c6a052;
+        }
 
-    .footer-sub strong {
-      color: #c6a052;
-    }
+        .footer-quote-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
 
-    .footer-quote-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
+        .footer-quote-wrap span {
+            color: #853d4a;
+            /* הבלטת הציטוט בגוון אפרסק חם */
+            font-family: var(--font-heading);
+            font-size: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-    .footer-quote-wrap span {
-      color: #853d4a;
-      /* הבלטת הציטוט בגוון אפרסק חם */
-      font-family: var(--font-heading);
-      font-size: 30px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
+        .footer-ornament {
+            color: #853d4a;
+            font-size: 18px;
+            letter-spacing: 6px;
+            margin-top: 22px;
+            opacity: 0.8;
+        }
 
-    .footer-ornament {
-      color:#853d4a ;
-      font-size: 18px;
-      letter-spacing: 6px;
-      margin-top: 22px;
-      opacity: 0.8;
-    }
-    .footer{    --color-primary: #6B2D38;
-    --color-primary-light: #F7EFF1;
-    --color-secondary: #C49A73;
-    --color-secondary-light: #F9F5F0;
-    --text-main: #332B2C;
-    --text-muted: #665759;
-    --bg-main: #FAF8F5;
-    --white: #FFFFFF;
-    --font-heading: 'Amatic SC', cursive;
-    --font-body: 'Assistant', sans-serif;
-    font-family: var(--font-body);
-    color: var(--text-main);
-    direction: rtl;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
-    padding: 45px 60px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid var(--logo-peach);
-}
-
-  
-</style>
+        .footer {
+            --color-primary: #6B2D38;
+            --color-primary-light: #F7EFF1;
+            --color-secondary: #C49A73;
+            --color-secondary-light: #F9F5F0;
+            --text-main: #332B2C;
+            --text-muted: #665759;
+            --bg-main: #FAF8F5;
+            --white: #FFFFFF;
+            --font-heading: 'Amatic SC', cursive;
+            --font-body: 'Assistant', sans-serif;
+            font-family: var(--font-body);
+            color: var(--text-main);
+            direction: rtl;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
+            padding: 45px 60px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--logo-peach);
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- HERO -->
-   <div class="hero-border-bottom"></div>
-
-<section class="hero-container">
-  <div class="hero-header">
-    <img class="brand-logo" src="picth.png" alt="רבדים">
-    <div class="badge-tag">ארגז כלים מוכן לשטח</div>
-  </div>
-  
-  <!-- כותרת פתוחה עם אפקט מעבר צבעים זורם -->
-  <div class="title-holder-open">
-    <h1 class="main-title-text">קוד החוסן</h1>
-    <div class="title-underline"></div>
-  </div>
-
-  <p class="sub-title">המפתח לוויסות רגשי: ארגז כלים רב-ממדי לניווט, ויסות וקידום תלמידים</p>
-  
-  <div class="hero-quote-box">
-    <span class="material-symbols-outlined" style="font-size: 18px;">auto_awesome</span>
-    <span> בין התגובה לגירוי קיים מרחב, במרחב הזה תלויה היכולת שלנו לבחור ולהתנהל</span>
-  </div>
-</section>
-  <div class="hero-border-bottom"></div>
-
-
-<!-- CORE DEVELOPMENTS GRID -->
-<section class="cards-section">
-  <div class="cards-grid">
-    <div class="question-card">
-      <div class="card-icon-wrap"><span class="material-symbols-outlined">psychology</span></div>
-      <p>קשיבות ונוכחות בכיתה ובחיים</p>
-    </div>
-    <div class="question-card">
-      <div class="card-icon-wrap"><span class="material-symbols-outlined">tune</span></div>
-      <p>איזון ודיאלוג רגשי מעצים</p>
-    </div>
-    <div class="question-card">
-      <div class="card-icon-wrap"><span class="material-symbols-outlined">schema</span></div>
-      <p>שינוי דפוסי חשיבה מקבעים</p>
-    </div>
-    <div class="question-card">
-      <div class="card-icon-wrap"><span class="material-symbols-outlined">shield_with_heart</span></div>
-      <p>התמודדות יעילה עם מצבי לחץ, חוסר ויסות ומשברים</p>
-    </div>
-  </div>
-</section>
-
-<!-- MANIFESTO TEXT -->
-<section class="text-manifesto">
-  <h2 class="manifesto-heading">קורס הכשרה ייחודי ומחייב</h2>
-  <p class="manifesto-p">
-    בעידן החינוך המאתגר של שנת פ"ו - 2026, ידע פדגוגי בלבד אינו מספיק. המציאות בשטח מצביעה על כך שהצלחתו של מורה בקידום תלמידיו תלויה במידה רבה ביכולתו לנהל את המרחב הרגשי בכיתה.
-    <br><br>
-לפניכן קורס הכשרה יוצא דופן, המספק ארגז כלים רב-ממדי לפיתוח חוסן נפשי ומקצועי, המאפשר לכן להוביל את תלמידכן להישגים ולרווחה רגשית מתוך הבנה מעמיקה ויכולת הכלה מובנית.
-
-  </p>
-</section>
-
-<!-- METHODS BANNER -->
-<div class="stats-banner">
-  <div class="stat-block">
-    <div class="stat-val">NLP</div>
-    <div class="stat-lbl">ניתוב לשוני פיזיולוגי</div>
-  </div>
-  <div class="stat-block">
-    <div class="stat-val">CBT</div>
-    <div class="stat-lbl">טיפול קוגניטיבי התנהגותי</div>
-  </div>
-  <div class="stat-block">
-    <div class="stat-val">DBT</div>
-    <div class="stat-lbl">טיפול דיאלקטי התנהגותי</div>
-  </div>
-  <div class="stat-block">
-    <div class="stat-val">מיינדפולנס</div>
-    <div class="stat-lbl">אימון לקשיבות ונוכחות</div>
-  </div>
-  <div class="stat-block">
-    <div class="stat-val">טרילותרפיה</div>
-    <div class="stat-lbl">איזון פנימי עמוק</div>
-  </div>
-</div>
-
-<!-- CONTENT SECTION WITH GRADIENT BACKGROUND -->
-<section class="timeline-section">
-  <h2 class="section-title-modern">הגישות המובילות שנלמד בקורס</h2>
-  
-  <div class="methods-container">
-    
-    <div class="method-item-box">
-      <div class="method-number-badge">✦</div>
-      <div class="method-text-content">
-        <h4>NLP (Neuro-Linguistic Programming)</h4>
-        <p>רכישת כלים לשוניים ומחשבתיים ליצירת שינוי מהיר בדפוסי התנהגות, שיפור התקשורת הבין-אישית וחיבור למשאבי כוח פנימיים.</p>
-      </div>
-    </div>
-
-    <div class="method-item-box">
-      <div class="method-number-badge">✦</div>
-      <div class="method-text-content">
-        <h4>מיינדפולנס (Mindfulness)</h4>
-        <p>פיתוח קשיבות, נוכחות מודעת והפחתת מתחים בזמן אמת. כלים מעשיים להרגעת מערכת העצבים וניהול הכיתה מתוך שקט פנימי.</p>
-      </div>
-    </div>
-
-    <div class="method-item-box">
-      <div class="method-number-badge">✦</div>
-      <div class="method-text-content">
-        <h4>טרילותרפיה</h4>
-        <p>גישה ייחודית לאיזון בין הראש (ההיגיון) ללב (הרגש) בהובלת המנהיג הפנימי, המאפשרת הבנה מעמיקה של קונפליקטים ופתרונם.</p>
-      </div>
-    </div>
-
-    <div class="method-item-box">
-      <div class="method-number-badge">✦</div>
-      <div class="method-text-content">
-        <h4>CBT</h4>
-        <p>מודלים מובנים לזיהוי והחלפת מחשבות אוטומטיות מחלישות, ורכישת מיומנויות יעילות לשינוי דפוסי התנהגות מעכבים.</p>
-      </div>
-    </div>
-
-    <div class="method-item-box">
-      <div class="method-number-badge">✦</div>
-      <div class="method-text-content">
-        <h4>DBT</h4>
-        <p>כלים מתקדמים לוויסות רגשי, עמידות במצבי מצוקה ומשבר, ופיתוח מיומנויות יעילות לניהול קשרים בין-אישיים.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CLEAN STANDARD COURSE FOOTER -->
+    <!-- HERO -->
     <div class="hero-border-bottom"></div>
-<footer class="footer">
-    <div class="footer-quote-wrap">
-        <span>"החוסן האמיתי אינו להימנע מהגל, אלא ללמוד לשמור על יציבות כשהוא מגיע."</span>
+
+    <section class="hero-container">
+        <div class="hero-header">
+            <img class="brand-logo" src="picth.png" alt="רבדים">
+            <div class="badge-tag">ארגז כלים מוכן לשטח</div>
+        </div>
+
+        <!-- כותרת פתוחה עם אפקט מעבר צבעים זורם -->
+        <div class="title-holder-open">
+            <h1 class="main-title-text">קוד החוסן</h1>
+            <div class="title-underline"></div>
+        </div>
+
+        <p class="sub-title">המפתח לוויסות רגשי: ארגז כלים רב-ממדי לניווט, ויסות וקידום תלמידים</p>
+
+        <div class="hero-quote-box">
+            <span class="material-symbols-outlined" style="font-size: 18px;">auto_awesome</span>
+            <span> בין התגובה לגירוי קיים מרחב, במרחב הזה תלויה היכולת שלנו לבחור ולהתנהל</span>
+        </div>
+    </section>
+    <div class="hero-border-bottom"></div>
+
+
+    <!-- CORE DEVELOPMENTS GRID -->
+    <section class="cards-section">
+        <div class="cards-grid">
+            <div class="question-card">
+                <div class="card-icon-wrap"><span class="material-symbols-outlined">psychology</span></div>
+                <p>קשיבות ונוכחות בכיתה ובחיים</p>
+            </div>
+            <div class="question-card">
+                <div class="card-icon-wrap"><span class="material-symbols-outlined">tune</span></div>
+                <p>איזון ודיאלוג רגשי מעצים</p>
+            </div>
+            <div class="question-card">
+                <div class="card-icon-wrap"><span class="material-symbols-outlined">schema</span></div>
+                <p>שינוי דפוסי חשיבה מקבעים</p>
+            </div>
+            <div class="question-card">
+                <div class="card-icon-wrap"><span class="material-symbols-outlined">shield_with_heart</span></div>
+                <p>התמודדות יעילה עם מצבי לחץ, חוסר ויסות ומשברים</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFESTO TEXT -->
+    <section class="text-manifesto">
+        <h2 class="manifesto-heading">קורס הכשרה ייחודי ומחייב</h2>
+        <p class="manifesto-p">
+            בעידן החינוך המאתגר של שנת פ"ו - 2026, ידע פדגוגי בלבד אינו מספיק. המציאות בשטח מצביעה על כך שהצלחתו של מורה
+            בקידום תלמידיו תלויה במידה רבה ביכולתו לנהל את המרחב הרגשי בכיתה.
+            <br><br>
+            לפניכן קורס הכשרה יוצא דופן, המספק ארגז כלים רב-ממדי לפיתוח חוסן נפשי ומקצועי, המאפשר לכן להוביל את תלמידכן
+            להישגים ולרווחה רגשית מתוך הבנה מעמיקה ויכולת הכלה מובנית.
+
+        </p>
+    </section>
+
+    <!-- METHODS BANNER -->
+    <div class="stats-banner">
+        <div class="stat-block">
+            <div class="stat-val">NLP</div>
+            <div class="stat-lbl">ניתוב לשוני פיזיולוגי</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-val">CBT</div>
+            <div class="stat-lbl">טיפול קוגניטיבי התנהגותי</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-val">DBT</div>
+            <div class="stat-lbl">טיפול דיאלקטי התנהגותי</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-val">מיינדפולנס</div>
+            <div class="stat-lbl">אימון לקשיבות ונוכחות</div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-val">טרילותרפיה</div>
+            <div class="stat-lbl">איזון פנימי עמוק</div>
+        </div>
     </div>
-    <div class="footer-sub">
-      לפרטים נוספים צרו קשר –<br><br>
-      רחלי גרינבאום &nbsp;|&nbsp; 052-717-4783<br><br>
-      grin5804783@gmail.com
-    </div>
-    <div class="footer-ornament">◆ ◆ ◆</div>
-  </footer>
-     <div class="hero-border-bottom"></div>
+
+    <!-- CONTENT SECTION WITH GRADIENT BACKGROUND -->
+    <section class="timeline-section">
+        <h2 class="section-title-modern">הגישות המובילות שנלמד בקורס</h2>
+
+        <div class="methods-container">
+
+            <div class="method-item-box">
+                <div class="method-number-badge">✦</div>
+                <div class="method-text-content">
+                    <h4>NLP (Neuro-Linguistic Programming)</h4>
+                    <p>רכישת כלים לשוניים ומחשבתיים ליצירת שינוי מהיר בדפוסי התנהגות, שיפור התקשורת הבין-אישית וחיבור
+                        למשאבי כוח פנימיים.</p>
+                </div>
+            </div>
+
+            <div class="method-item-box">
+                <div class="method-number-badge">✦</div>
+                <div class="method-text-content">
+                    <h4>מיינדפולנס (Mindfulness)</h4>
+                    <p>פיתוח קשיבות, נוכחות מודעת והפחתת מתחים בזמן אמת. כלים מעשיים להרגעת מערכת העצבים וניהול הכיתה
+                        מתוך שקט פנימי.</p>
+                </div>
+            </div>
+
+            <div class="method-item-box">
+                <div class="method-number-badge">✦</div>
+                <div class="method-text-content">
+                    <h4>טרילותרפיה</h4>
+                    <p>גישה ייחודית לאיזון בין הראש (ההיגיון) ללב (הרגש) בהובלת המנהיג הפנימי, המאפשרת הבנה מעמיקה של
+                        קונפליקטים ופתרונם.</p>
+                </div>
+            </div>
+
+            <div class="method-item-box">
+                <div class="method-number-badge">✦</div>
+                <div class="method-text-content">
+                    <h4>CBT</h4>
+                    <p>מודלים מובנים לזיהוי והחלפת מחשבות אוטומטיות מחלישות, ורכישת מיומנויות יעילות לשינוי דפוסי
+                        התנהגות מעכבים.</p>
+                </div>
+            </div>
+
+            <div class="method-item-box">
+                <div class="method-number-badge">✦</div>
+                <div class="method-text-content">
+                    <h4>DBT</h4>
+                    <p>ארגז כלים מעשי ומובנה לפיתוח ויסות רגשי, עמידות במצבי לחץ ותסכול, וניהול תקשורת יעילה.
+                        הגישה מעניקה מיומנויות יישומיות להרגעת הגוף והנפש בזמן אמת, והחלפת תגובות אימפולסיביות בפעולה
+                        מודעת ומקדמת.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CLEAN STANDARD COURSE FOOTER -->
+    <div class="hero-border-bottom"></div>
+    <footer class="footer">
+        <div class="footer-quote-wrap">
+            <span>"החוסן האמיתי אינו להימנע מהגל, אלא ללמוד לשמור על יציבות כשהוא מגיע."</span>
+        </div>
+        <div class="footer-sub">
+            לפרטים נוספים צרו קשר –<br><br>
+            רחלי גרינבאום &nbsp;|&nbsp; 052-717-4783<br><br>
+            grin5804783@gmail.com
+        </div>
+        <div class="footer-ornament">◆ ◆ ◆</div>
+    </footer>
+    <div class="hero-border-bottom"></div>
 
 
 </body>
+
 </html>
