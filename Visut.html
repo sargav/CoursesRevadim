@@ -1,808 +1,569 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מרכז רבדים – קוד החוסן | המפתח לוויסות רגשי</title>
 
-<title>קורס החוסן</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@700;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+<!-- טעינת הגופנים והאייקונים מהשפה העיצובית המשותפת -->
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
 <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  :root {
+    /* פלטת צבעים חדשה: בורדו עמוק וחול חם */
+    --color-primary: #6B2D38;       /* בורדו-יין עמוק, יוקרתי ומשדר יציבות וחוסן */
+    --color-primary-light: #F7EFF1; /* גוון בהיר מאוד של הבורדו לרקעים רכים */
+    --color-secondary: #C49A73;     /* גוון חול-זהב חם ועמום, מסמל טבע ורוגע */
+    --color-secondary-light: #F9F5F0; /* גוון חול-שמנת בהיר נקי */
+    
+    --text-main: #332B2C;        /* חום-שוקולד כהה מאוד וקריא */
+    --text-muted: #665759;       /* גוון משני עדין לטקסט */
+    --bg-main: #FAF8F5;          /* רקע כללי בהיר וחם בגוון פנינה-שמנת */
+    --white: #FFFFFF;
+    
+    --font-heading: 'Amatic SC', cursive;
+    --font-body: 'Assistant', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    direction: rtl;
+    width: 794px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══════════════════════════════════ HERO SECTION */
+  .hero-container {
+    background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
+    padding: 65px 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(107, 45, 56, 0.15);
+    text-align: center;
+  }
+
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .brand-logo {
+    width: 115px;
+    height: auto;
+  }
+
+  .badge-tag {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 4px 16px;
+    border-radius: 30px;
+    background-color: rgba(107, 45, 56, 0.05);
+    letter-spacing: 0.5px;
+  }
+
+  /* כותרת במראה פתוח עם אפקט מעבר צבעים זורם */
+  .title-holder-open {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .main-title-text {
+    font-family: var(--font-heading);
+    font-size: 84px;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    background: linear-gradient(to left, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  /* קו מפריד עיצובי עדין מתחת לכותרת */
+  .title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: 15px auto 25px auto;
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+
+  .sub-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-main);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+
+  .hero-quote-box {
+    margin-top: 25px;
+    font-size: 15.5px;
+    font-style: italic;
+    color: var(--color-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .hero-border-bottom{
+    --brand-primary: #1A365D;
+    --brand-secondary: #2A6F97;
+    --brand-accent: #C6A052;
+    --brand-accent-light: #E9D8A6;
+    --brand-bg-light: #F4F7F6;
+    --brand-dark: #1E293B;
+    --brand-dark-soft: #475569;
+    --brand-white: #FFFFFF;
+    --font-heading: 'Amatic SC', cursive;
+    --font-body: 'Assistant', sans-serif;
+    font-family: var(--font-body);
+    color: var(--brand-dark);
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--brand-accent), #854d49, var(--brand-accent), transparent);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ═══════════════════════════════════ CORE DEVELOPMENTS GRID */
+  .cards-section {
+    padding: 50px 45px 30px 45px;
+    background: var(--white);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .question-card {
+    background-color: var(--white);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(107, 45, 56, 0.15);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .card-icon-wrap {
+    background-color: var(--color-secondary-light);
+    color: var(--color-secondary);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .question-card p {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+  }
+
+  /* ═══════════════════════════════════ MAIN HOOK TEXT */
+  .text-manifesto {
+    padding: 40px 65px 50px 65px;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .manifesto-heading {
+    font-family: var(--font-heading);
+    font-size: 44px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .manifesto-p {
+    font-size: 16.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    text-align: justify;
+  }
+
+  /* ═══════════════════════════════════ METHODS BANNER */
+  .stats-banner {
+    background: linear-gradient(90deg, var(--color-primary) 0%, #853D4A 100%);
+    padding: 22px 20px;
+    display: flex;
+    justify-content: space-around;
+    color: var(--white);
+    gap: 10px;
+  }
+
+
+  .stat-block { text-align: center; flex: 1; }
+
+  .stat-val {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+
+  .stat-lbl {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  /* ═══════════════════════════════════ CONTENT SECTION WITH GRADIENT BACKGROUND */
+  .timeline-section {
+    padding: 55px 45px;
+    /* רקע מתחלף עדין המשלב בין הבורדו לחול החם */
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, #FAF8F5 50%, var(--color-secondary-light) 100%);
+  }
+
+  .section-title-modern {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 45px;
+    position: relative;
+  }
+
+  .section-title-modern::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+  }
+
+  .methods-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .method-item-box {
+    background-color: var(--white);
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.015);
+    border: 1px solid rgba(107, 45, 56, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .method-number-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-light);
+    color: var(--color-secondary);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .method-item-box:nth-child(even) .method-number-badge {
+    background-color: rgba(107, 45, 56, 0.1);
+    color: var(--color-primary);
+  }
+
+  .method-text-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+
+  .method-text-content p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════════════════════ HIGHLIGHT SUMMARY */
+  .bottom-blocks {
+    padding: 50px 45px 50px 45px;
+    background-color: var(--white);
+  }
+
+  .block-box {
+    border: 1px solid var(--color-primary-light);
+    background-color: var(--bg-main);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .block-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .block-desc {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════════════════════ CLEAN STANDARD COURSE FOOTER */
+     /* .footer {
+      /* גרדיאנט חום כהה עשיר ליצירת סגירה מושלמת ויוקרתית לדף */
+      /* background: linear-gradient(135deg, #b4dbb9 0%, #0c0c0c 100%);
+      padding: 45px 60px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      border-top: 3px solid var(--logo-peach);
+    } */ */
+
+    .footer-sub {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color:#c6a052;
+      /* טקסט בהיר וקריא על הרקע הכהה */
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .footer-sub strong {
+      color: #c6a052;
+    }
+
+    .footer-quote-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .footer-quote-wrap span {
+      color: #853d4a;
+      /* הבלטת הציטוט בגוון אפרסק חם */
+      font-family: var(--font-heading);
+      font-size: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer-ornament {
+      color:#853d4a ;
+      font-size: 18px;
+      letter-spacing: 6px;
+      margin-top: 22px;
+      opacity: 0.8;
+    }
+    .footer{    --color-primary: #6B2D38;
+    --color-primary-light: #F7EFF1;
+    --color-secondary: #C49A73;
+    --color-secondary-light: #F9F5F0;
+    --text-main: #332B2C;
+    --text-muted: #665759;
+    --bg-main: #FAF8F5;
+    --white: #FFFFFF;
+    --font-heading: 'Amatic SC', cursive;
+    --font-body: 'Assistant', sans-serif;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #FDFDFD 0%, var(--color-primary-light) 100%);
+    padding: 45px 60px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--logo-peach);
 }
 
-:root{
-
-    --gold:#c8a15a;
-    --gold-light:#e3c98c;
-
-    --rose:#dcb4bc;
-    --rose-soft:#f7e7ea;
-
-    --cream:#fffaf8;
-
-    --dark:#231f20;
-    --soft:#5b5353;
-
-    --shadow:
-    0 10px 40px rgba(0,0,0,0.07);
-
-}
-
-body{
-
-    font-family:'Assistant',sans-serif;
-    background:#f6f1f1;
-    color:var(--dark);
-    overflow-x:hidden;
-
-}
-
-/* PAGE */
-
-.page{
-
-    width:900px;
-    margin:auto;
-    background:
-    linear-gradient(rgba(255,255,255,0.92),rgba(255,255,255,0.95)),
-    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-
-    min-height:100vh;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 0 60px rgba(0,0,0,0.08);
-
-}
-
-/* WATERCOLOR */
-
-.page::before{
-
-    content:'';
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    background:
-    radial-gradient(circle,
-    rgba(248,196,208,0.55) 0%,
-    rgba(248,196,208,0.20) 40%,
-    transparent 75%);
-
-    top:-260px;
-    right:-170px;
-
-    z-index:0;
-
-}
-
-.page::after{
-
-    content:'';
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    background:
-    radial-gradient(circle,
-    rgba(243,196,206,0.60) 0%,
-    rgba(243,196,206,0.15) 40%,
-    transparent 75%);
-
-    bottom:-280px;
-    left:-180px;
-
-    z-index:0;
-
-}
-
-/* GOLD PARTICLES */
-
-.gold{
-
-    position:absolute;
-    inset:0;
-
-    background-image:
-    radial-gradient(rgba(200,161,90,0.45) 1px, transparent 1px);
-
-    background-size:14px 14px;
-
-    opacity:.18;
-
-    z-index:0;
-    pointer-events:none;
-
-}
-
-/* CORNERS */
-
-.corner-top{
-
-    position:absolute;
-
-    top:30px;
-    left:30px;
-
-    width:350px;
-    height:120px;
-
-    border-top:7px solid var(--gold);
-    border-left:7px solid var(--gold);
-
-    z-index:3;
-
-}
-
-.corner-bottom{
-
-    position:absolute;
-
-    bottom:30px;
-    right:30px;
-
-    width:350px;
-    height:120px;
-
-    border-bottom:7px solid var(--gold);
-    border-right:7px solid var(--gold);
-
-    z-index:3;
-
-}
-
-/* HERO */
-
-.hero{
-
-    position:relative;
-    z-index:2;
-
-    padding:
-    90px 80px 40px;
-
-    text-align:center;
-
-}
-
-.badge{
-
-    display:inline-block;
-
-    background:
-    rgba(255,255,255,0.55);
-
-    backdrop-filter:blur(10px);
-
-    border:
-    1px solid rgba(200,161,90,0.5);
-
-    padding:
-    10px 28px;
-
-    border-radius:40px;
-
-    font-size:22px;
-    font-weight:700;
-
-    color:#5a4a32;
-
-    box-shadow:var(--shadow);
-
-    margin-bottom:35px;
-
-}
-
-.hero-title{
-
-    font-family:'Frank Ruhl Libre',serif;
-
-    font-size:86px;
-    line-height:1.05;
-
-    font-weight:900;
-
-    color:var(--dark);
-
-    position:relative;
-
-}
-
-.hero-title span{
-
-    display:block;
-
-    font-family:'Amatic SC',cursive;
-
-    font-size:108px;
-
-    color:#bb8f97;
-
-    margin-top:-10px;
-
-    letter-spacing:2px;
-
-}
-
-.hero-divider{
-
-    width:180px;
-    height:2px;
-
-    margin:
-    30px auto;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent);
-
-}
-
-.hero-sub{
-
-    font-size:28px;
-
-    line-height:1.9;
-
-    color:var(--soft);
-
-    max-width:700px;
-
-    margin:auto;
-
-    font-weight:300;
-
-}
-
-.hero-sub strong{
-
-    color:var(--dark);
-    font-weight:800;
-
-}
-
-/* GLASS CARD */
-
-.glass-card{
-
-    width:82%;
-
-    margin:
-    60px auto;
-
-    padding:
-    45px 55px;
-
-    background:
-    rgba(255,255,255,0.52);
-
-    backdrop-filter:blur(18px);
-
-    border:
-    1px solid rgba(255,255,255,0.7);
-
-    border-radius:28px;
-
-    box-shadow:
-    0 15px 50px rgba(0,0,0,0.08);
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.glass-card::before{
-
-    content:'❝';
-
-    position:absolute;
-
-    top:10px;
-    left:35px;
-
-    font-size:120px;
-
-    color:rgba(220,180,188,0.18);
-
-    font-family:'Frank Ruhl Libre',serif;
-
-}
-
-.glass-title{
-
-    font-size:42px;
-    font-weight:900;
-
-    margin-bottom:25px;
-
-    text-align:center;
-
-}
-
-.glass-title span{
-
-    color:#bc8d96;
-
-    font-family:'Amatic SC',cursive;
-
-    font-size:60px;
-
-}
-
-.glass-text{
-
-    font-size:24px;
-
-    line-height:2.1;
-
-    text-align:center;
-
-    color:#433d3d;
-
-    font-weight:400;
-
-}
-
-/* FEATURES */
-
-.features{
-
-    position:relative;
-    z-index:2;
-
-    padding:
-    10px 60px 0;
-
-}
-
-.section-title{
-
-    text-align:center;
-
-    font-size:52px;
-    font-weight:900;
-
-    margin-bottom:55px;
-
-    font-family:'Frank Ruhl Libre',serif;
-
-}
-
-.section-title span{
-
-    font-family:'Amatic SC',cursive;
-
-    color:#c3939d;
-
-    font-size:70px;
-
-}
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:28px;
-
-}
-
-.card{
-
-    background:white;
-
-    border-radius:28px;
-
-    padding:
-    35px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow);
-
-    transition:.35s;
-
-}
-
-.card:hover{
-
-    transform:
-    translateY(-8px);
-
-}
-
-.card::before{
-
-    content:'';
-
-    position:absolute;
-
-    top:0;
-    right:0;
-    left:0;
-
-    height:6px;
-
-    background:
-    linear-gradient(
-    90deg,
-    var(--gold),
-    #f0d59a,
-    var(--gold));
-
-}
-
-.icon{
-
-    width:75px;
-    height:75px;
-
-    border-radius:50%;
-
-    background:
-    linear-gradient(
-    135deg,
-    #f8d8de,
-    #fff);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:34px;
-
-    margin-bottom:22px;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.05);
-
-}
-
-.card h3{
-
-    font-size:34px;
-
-    margin-bottom:14px;
-
-    font-family:'Amatic SC',cursive;
-
-    color:#8b6168;
-
-}
-
-.card p{
-
-    font-size:21px;
-
-    line-height:1.9;
-
-    color:#4f4848;
-
-}
-
-/* METHODS */
-
-.methods{
-
-    position:relative;
-    z-index:2;
-
-    padding:
-    90px 70px;
-
-    text-align:center;
-
-}
-
-.methods-title{
-
-    font-size:48px;
-
-    font-weight:900;
-
-    margin-bottom:50px;
-
-}
-
-.methods-grid{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:24px;
-
-}
-
-.method{
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(255,255,255,0.92),
-    rgba(255,255,255,0.6));
-
-    backdrop-filter:blur(10px);
-
-    border:
-    1px solid rgba(200,161,90,0.45);
-
-    padding:
-    18px 40px;
-
-    border-radius:70px;
-
-    font-size:32px;
-    font-weight:800;
-
-    box-shadow:var(--shadow);
-
-    transition:.3s;
-
-}
-
-.method:hover{
-
-    transform:scale(1.06);
-
-}
-
-/* FOOTER */
-
-.footer{
-
-    position:relative;
-    z-index:2;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2a2526,
-    #433739);
-
-    padding:
-    65px 50px;
-
-    text-align:center;
-
-    margin-top:40px;
-
-}
-
-.footer::before{
-
-    content:'';
-
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:4px;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    var(--gold),
-    transparent);
-
-}
-
-.footer-title{
-
-    font-size:46px;
-
-    color:#fff;
-
-    font-weight:900;
-
-    margin-bottom:18px;
-
-    font-family:'Frank Ruhl Libre',serif;
-
-}
-
-.footer-sub{
-
-    color:rgba(255,255,255,0.8);
-
-    font-size:24px;
-
-    line-height:1.9;
-
-}
-
-.footer-ornament{
-
-    margin-top:25px;
-
-    color:var(--gold-light);
-
-    letter-spacing:8px;
-
-    font-size:20px;
-
-}
-
+  
 </style>
 </head>
-
 <body>
 
-<div class="page">
+<!-- HERO -->
+   <div class="hero-border-bottom"></div>
 
-<div class="gold"></div>
+<section class="hero-container">
+  <div class="hero-header">
+    <img class="brand-logo" src="picth.png" alt="רבדים">
+    <div class="badge-tag">ארגז כלים מוכן לשטח</div>
+  </div>
+  
+  <!-- כותרת פתוחה עם אפקט מעבר צבעים זורם -->
+  <div class="title-holder-open">
+    <h1 class="main-title-text">קוד החוסן</h1>
+    <div class="title-underline"></div>
+  </div>
 
-<div class="corner-top"></div>
-<div class="corner-bottom"></div>
+  <p class="sub-title">המפתח לוויסות רגשי: ארגז כלים רב-ממדי לניווט, ויסות וקידום תלמידים</p>
+  
+  <div class="hero-quote-box">
+    <span class="material-symbols-outlined" style="font-size: 18px;">auto_awesome</span>
+    <span> בין התגובה לגירוי קיים מרחב, במרחב הזה תלויה היכולת שלנו לבחור ולהתנהל</span>
+  </div>
+</section>
+  <div class="hero-border-bottom"></div>
 
-<section class="hero">
 
-<div class="badge">
-הכשרה מקצועית · תשפ"ו 2026
-</div>
-
-<h1 class="hero-title">
-קורס
-<span>החוסן</span>
-</h1>
-
-<div class="hero-divider"></div>
-
-<p class="hero-sub">
-ארגז כלים מתקדם לניהול רגשי,
-ויסות וקידום תלמידים —
-<strong>בגישה מקצועית, מעשית ומדויקת לשטח</strong>
-</p>
-
+<!-- CORE DEVELOPMENTS GRID -->
+<section class="cards-section">
+  <div class="cards-grid">
+    <div class="question-card">
+      <div class="card-icon-wrap"><span class="material-symbols-outlined">psychology</span></div>
+      <p>קשיבות ונוכחות בכיתה ובחיים</p>
+    </div>
+    <div class="question-card">
+      <div class="card-icon-wrap"><span class="material-symbols-outlined">tune</span></div>
+      <p>איזון ודיאלוג רגשי מעצים</p>
+    </div>
+    <div class="question-card">
+      <div class="card-icon-wrap"><span class="material-symbols-outlined">schema</span></div>
+      <p>שינוי דפוסי חשיבה מקבעים</p>
+    </div>
+    <div class="question-card">
+      <div class="card-icon-wrap"><span class="material-symbols-outlined">shield_with_heart</span></div>
+      <p>התמודדות יעילה עם מצבי לחץ, חוסר ויסות ומשברים</p>
+    </div>
+  </div>
 </section>
 
-<section class="glass-card">
+<!-- MANIFESTO TEXT -->
+<section class="text-manifesto">
+  <h2 class="manifesto-heading">קורס הכשרה ייחודי ומחייב</h2>
+  <p class="manifesto-p">
+    בעידן החינוך המאתגר של שנת פ"ו - 2026, ידע פדגוגי בלבד אינו מספיק. המציאות בשטח מצביעה על כך שהצלחתו של מורה בקידום תלמידיו תלויה במידה רבה ביכולתו לנהל את המרחב הרגשי בכיתה.
+    <br><br>
+לפניכן קורס הכשרה יוצא דופן, המספק ארגז כלים רב-ממדי לפיתוח חוסן נפשי ומקצועי, המאפשר לכן להוביל את תלמידכן להישגים ולרווחה רגשית מתוך הבנה מעמיקה ויכולת הכלה מובנית.
 
-<div class="glass-title">
-למה <span>הקורס הזה?</span>
-</div>
-
-<p class="glass-text">
-
-המציאות החינוכית של היום דורשת הרבה מעבר לידע מקצועי.
-אנשי חינוך נדרשים להוביל מרחב רגשי יציב,
-להתמודד עם עומסים וליצור סביבה תומכת ומקדמת.
-
-הקורס מעניק כלים יישומיים,
-מודלים עדכניים ושיטות עבודה מתקדמות
-לעבודה מדויקת ומחזקת בשטח.
-
-</p>
-
+  </p>
 </section>
 
-<section class="features">
-
-<h2 class="section-title">
-מה <span>תקבלו?</span>
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="icon">✦</div>
-
-<h3>ויסות רגשי</h3>
-
-<p>
-כלים מקצועיים להתמודדות עם עומס,
-ניהול מצבי לחץ ובניית יציבות פנימית.
-</p>
-
+<!-- METHODS BANNER -->
+<div class="stats-banner">
+  <div class="stat-block">
+    <div class="stat-val">NLP</div>
+    <div class="stat-lbl">ניתוב לשוני פיזיולוגי</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-val">CBT</div>
+    <div class="stat-lbl">טיפול קוגניטיבי התנהגותי</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-val">DBT</div>
+    <div class="stat-lbl">טיפול דיאלקטי התנהגותי</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-val">מיינדפולנס</div>
+    <div class="stat-lbl">אימון לקשיבות ונוכחות</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-val">טרילותרפיה</div>
+    <div class="stat-lbl">איזון פנימי עמוק</div>
+  </div>
 </div>
 
-<div class="card">
+<!-- CONTENT SECTION WITH GRADIENT BACKGROUND -->
+<section class="timeline-section">
+  <h2 class="section-title-modern">הגישות המובילות שנלמד בקורס</h2>
+  
+  <div class="methods-container">
+    
+    <div class="method-item-box">
+      <div class="method-number-badge">✦</div>
+      <div class="method-text-content">
+        <h4>NLP (Neuro-Linguistic Programming)</h4>
+        <p>רכישת כלים לשוניים ומחשבתיים ליצירת שינוי מהיר בדפוסי התנהגות, שיפור התקשורת הבין-אישית וחיבור למשאבי כוח פנימיים.</p>
+      </div>
+    </div>
 
-<div class="icon">✦</div>
+    <div class="method-item-box">
+      <div class="method-number-badge">✦</div>
+      <div class="method-text-content">
+        <h4>מיינדפולנס (Mindfulness)</h4>
+        <p>פיתוח קשיבות, נוכחות מודעת והפחתת מתחים בזמן אמת. כלים מעשיים להרגעת מערכת העצבים וניהול הכיתה מתוך שקט פנימי.</p>
+      </div>
+    </div>
 
-<h3>שינוי דפוסי חשיבה</h3>
+    <div class="method-item-box">
+      <div class="method-number-badge">✦</div>
+      <div class="method-text-content">
+        <h4>טרילותרפיה</h4>
+        <p>גישה ייחודית לאיזון בין הראש (ההיגיון) ללב (הרגש) בהובלת המנהיג הפנימי, המאפשרת הבנה מעמיקה של קונפליקטים ופתרונם.</p>
+      </div>
+    </div>
 
-<p>
-למידת טכניקות מתקדמות
-ליצירת תפיסה מקדמת וחיזוק חוסן אישי.
-</p>
+    <div class="method-item-box">
+      <div class="method-number-badge">✦</div>
+      <div class="method-text-content">
+        <h4>CBT</h4>
+        <p>מודלים מובנים לזיהוי והחלפת מחשבות אוטומטיות מחלישות, ורכישת מיומנויות יעילות לשינוי דפוסי התנהגות מעכבים.</p>
+      </div>
+    </div>
 
-</div>
+    <div class="method-item-box">
+      <div class="method-number-badge">✦</div>
+      <div class="method-text-content">
+        <h4>DBT</h4>
+        <p>כלים מתקדמים לוויסות רגשי, עמידות במצבי מצוקה ומשבר, ופיתוח מיומנויות יעילות לניהול קשרים בין-אישיים.</p>
+      </div>
+    </div>
 
-<div class="card">
-
-<div class="icon">✦</div>
-
-<h3>כלים יישומיים</h3>
-
-<p>
-שיטות עבודה ברורות ומעשיות
-שניתנות ליישום מיידי במסגרת החינוכית.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">✦</div>
-
-<h3>עבודה מקצועית</h3>
-
-<p>
-שילוב מודלים מובילים
-מעולם ההנחיה, האימון והטיפול הרגשי.
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-<section class="methods">
-
-<h2 class="methods-title">
-שיטות מובילות המשולבות בתכנית
-</h2>
-
-<div class="methods-grid">
-
-<div class="method">NLP</div>
-<div class="method">CBT</div>
-<div class="method">DBT</div>
-<div class="method">מיינדפולנס</div>
-<div class="method">תרפיה</div>
-
-</div>
-
-</section>
-
+<!-- CLEAN STANDARD COURSE FOOTER -->
+    <div class="hero-border-bottom"></div>
 <footer class="footer">
+    <div class="footer-quote-wrap">
+        <span>"החוסן האמיתי אינו להימנע מהגל, אלא ללמוד לשמור על יציבות כשהוא מגיע."</span>
+    </div>
+    <div class="footer-sub">
+      לפרטים נוספים צרו קשר –<br><br>
+      רחלי גרינבאום &nbsp;|&nbsp; 052-717-4783<br><br>
+      grin5804783@gmail.com
+    </div>
+    <div class="footer-ornament">◆ ◆ ◆</div>
+  </footer>
+     <div class="hero-border-bottom"></div>
 
-<div class="footer-title">
-הכשרה מקצועית שמחברת בין ידע לשטח
-</div>
-
-<div class="footer-sub">
-תכנית עומק מעשית, מדויקת ומתקדמת
-המיועדת לאנשי חינוך המבקשים להוביל שינוי אמיתי
-</div>
-
-<div class="footer-ornament">
-✦ ✦ ✦
-</div>
-
-</footer>
-
-</div>
 
 </body>
 </html>
