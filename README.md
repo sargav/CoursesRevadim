@@ -1,2 +1,2 @@
-# CoursesRevadim
+# Revadim
 קורסים של רבדים
