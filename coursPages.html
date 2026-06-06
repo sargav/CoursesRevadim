@@ -1,343 +1,412 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>רבדים | קורסים והכשרות</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>רבדים | קורסים והכשרות</title>
 
-<!-- טעינת הגופנים והאייקונים מהשפה העיצובית המשותפת -->
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root {
-    /* פלטת גוונים מעודכנת - רכה, נשית ויוקרתית */
-    --soft-rose-gradient-start: #FAF5F3; 
-    --soft-rose-gradient-end: #F0E2DE;   
-    --soft-sage: #CBD9CC;       
-    
-    /* צבעים מעודכנים לטקסט וכותרות */
-    --title-color: #A37A58;              /* גוון חול-זהב עמוק, יוקרתי, רך ונשי */
-    --text-main: #423735;                /* חום-אפרפר כהה ועדין לטקסט הרץ */
-    --light-cream: #FCFAF7;     
-    --white: #ffffff;
-    
-    /* הגופנים המשולבים */
-    --title-font: 'Amatic SC', cursive;
-    --body-font: 'Assistant', sans-serif;
-}
+        :root {
+            /* פלטת גוונים עדינה ויוקרתית */
+            --soft-rose-gradient-start: #FAF5F3;
+            --soft-rose-gradient-end: #F0E2DE;
+            --soft-sage: #CBD9CC;
 
-body {
-    font-family: var(--body-font);
-    background: var(--light-cream);
-    color: var(--text-main);
-    min-height: 100vh;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            /* פלטת צבעים בעלת נוכחות וקונטרה */
+            --growth-green: #1B3B2B;
+            /* ירוק-יער עמוק לצמיחה ושינוי */
+            --title-color: #A37A58;
+            /* גוון חול-זהב של המותג */
+            --title-bronze: #855E3F;
+            /* ברונזה עשירה להעמקת הגרדיאנט */
+            --text-main: #423735;
+            /* חום-אפרפר כהה לטקסט הרץ */
+            --light-cream: #FCFAF7;
+            --white: #ffffff;
 
-/* CONTAINER ראשי במסך מפוצל */
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    width: 100%;
-    min-height: 100vh;
-}
+            /* הגופנים המשולבים */
+            --title-font: 'Amatic SC', cursive;
+            --body-font: 'Assistant', sans-serif;
+        }
 
-/* צד ימין: רקע מתחלף רך, נשי וזורם */
-.brand-side {
-    background: linear-gradient(135deg, var(--soft-rose-gradient-start) 0%, var(--soft-rose-gradient-end) 100%);
-    padding: 60px 50px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    border-left: 1px solid rgba(163, 122, 88, 0.05);
-}
+        body {
+            font-family: var(--body-font);
+            background: var(--light-cream);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.logo-area {
-    margin-bottom: 20px;
-}
+        /* CONTAINER ראשי במסך מפוצל */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            width: 100%;
+            min-height: 100vh;
+        }
 
-.logo-area img {
-    height: 145px; 
-    width: auto;
-    display: block;
-}
+        /* צד ימין: רקע מותג מעוצב ונקי */
+        .brand-side {
+            background: linear-gradient(135deg, var(--soft-rose-gradient-start) 0%, var(--soft-rose-gradient-end) 100%);
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border-left: 1px solid rgba(163, 122, 88, 0.05);
+        }
 
-.main-intro {
-    margin: 20px 0;
-}
+        .logo-area {
+            margin-bottom: 20px;
+        }
 
-/* כותרת ראשית בשורה אחת */
-.main-intro h1 {
-    font-family: var(--title-font);
-    font-size: 50px; 
-    line-height: 1.2;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--title-color);
-    letter-spacing: 1px;
-    white-space: nowrap; 
-}
+        .logo-area img {
+            height: 145px;
+            width: auto;
+            display: block;
+        }
 
-.main-intro p {
-    font-family: var(--body-font);
-    font-size: 16.5px;
-    line-height: 1.7;
-    color: var(--text-main);
-    opacity: 0.95;
-    max-width: 460px;
-}
+        .main-intro {
+            margin: 20px 0;
+        }
 
-/* אזור יצירת קשר בתחתית */
-.contact-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(163, 122, 88, 0.15);
-}
+        /* כותרת ראשית בגרדיאנט זהב-ברונזה הנוכחי והאהוב */
+        .main-intro h1 {
+            font-family: var(--title-font);
+            font-size: 53px;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            background: linear-gradient(45deg, #ffcca1, var(--title-bronze));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-.contact-info-item {
-    font-family: var(--body-font);
-    font-size: 16px;
-    color: var(--text-main);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        .main-intro p {
+            font-family: var(--body-font);
+            font-size: 16.5px;
+            line-height: 1.7;
+            color: var(--text-main);
+            opacity: 0.95;
+            max-width: 460px;
+        }
 
-.contact-info-item a {
-    color: var(--title-color); 
-    text-decoration: none;
-    font-weight: 600;
-}
+        /* יחידה עיצובית אחת נקייה ומזמינה - מלווה בפס זהב אנכי עדין (בלי קופסה סגורה) */
+        .professional-profile-area {
+            margin-top: 40px;
+            padding-right: 18px;
+            position: relative;
+        }
 
-.contact-info-item a:hover {
-    text-decoration: underline;
-}
+        /* פס הזהב המעוצב והאנכי שנותן את הטאץ' המיוחד והיוקרתי */
+        .elegant-gold-line {
+            position: absolute;
+            right: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--title-color), var(--title-bronze));
+            border-radius: 2px;
+        }
 
-.footer-note {
-    font-size: 12px;
-    color: var(--text-main);
-    opacity: 0.5;
-    margin-top: 15px;
-}
+        /* עיצוב השם רחלי גרינבאום עם הגרדיאנט המדויק של הכותרות */
+        .professional-profile-area .gradient-name {
+            font-family: var(--title-font);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: 0.3px;
+            display: inline-block;
+            background: linear-gradient(45deg, #ffcca1, var(--title-bronze));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-/* צד שמאל: רשימת הקורסים */
-.navigation-side {
-    padding: 60px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-    background: var(--light-cream);
-}
+        .professional-profile-area .expert-subtitle {
+            font-family: var(--body-font);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            opacity: 0.85;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
 
-/* כותרת הרשימה */
-.nav-headline {
-    font-family: var(--title-font);
-    font-size: 38px; 
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--title-color);
-    opacity: 0.9;
-    padding-right: 10px;
-    line-height: 1;
-}
+        /* שורת קשר מאוחדת ונקייה - המייל והנייד מחוברים יחד כרצף אחד ללא מרווחים מיותרים */
+        .unified-contact-line {
+            font-family: var(--body-font);
+            font-size: 14.5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
 
-/* כרטיסי קישור מעוגלים ונקיים - כולם כוללים כעת את ה-border-right המודגש */
-.course-link-block {
-    background: var(--white);
-    padding: 20px 32px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: var(--text-main);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 6px 20px rgba(163, 122, 88, 0.02);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(240, 226, 222, 0.4);
-    border-right: 4px solid var(--title-color); /* הוספת הפס הימני המודגש לכל הבלוקים */
-}
+        .unified-contact-line .divider-bullet {
+            color: var(--title-color);
+            font-weight: 700;
+            padding: 0 2px;
+        }
 
-.course-link-block:hover {
-    transform: translateX(-8px);
-    background: var(--white);
-    border-color: var(--soft-rose-gradient-end);
-    border-right-color: var(--title-color); /* שומר על צבע הפס הימני גם ב-hover */
-    box-shadow: 0 10px 25px rgba(163, 122, 88, 0.08);
-}
+        .unified-contact-line a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
 
-.course-info-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
+        .unified-contact-line a:hover {
+            color: var(--title-color);
+            text-decoration: underline;
+        }
 
-.course-type-label {
-    font-family: var(--body-font);
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: var(--text-main);
-    opacity: 0.7;
-    font-weight: 700;
-}
+        .footer-note {
+            font-size: 11px;
+            color: var(--text-main);
+            opacity: 0.4;
+            margin-top: 25px;
+            padding-right: 2px;
+        }
 
-.course-link-block h2 {
-    font-family: var(--body-font); 
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-main);
-    transition: color 0.3s ease;
-}
+        /* צד שמאל: רשימת הקורסים וההכשרות */
+        .navigation-side {
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            background: var(--light-cream);
+        }
 
-.course-link-block:hover h2 {
-    color: var(--title-color); 
-}
+        /* כותרת הרשימה בגרדיאנט הנוכחי והתואם */
+        .nav-headline {
+            font-family: var(--title-font);
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            padding-right: 10px;
+            line-height: 1;
 
-/* עיגול החץ האינטראקטיבי */
-.arrow-indicator {
-    width: 44px;
-    height: 44px;
-    border-radius: 50px;
-    background: var(--soft-rose-gradient-start);
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+            background: linear-gradient(45deg, #ffcca1, var(--title-bronze));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-.course-link-block:hover .arrow-indicator {
-    background: var(--soft-sage);
-    color: var(--text-main);
-    transform: rotate(-45deg);
-}
+        /* כרטיסי קישור נקיים ומעוגלים */
+        .course-link-block {
+            background: var(--white);
+            padding: 20px 32px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(163, 122, 88, 0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(240, 226, 222, 0.4);
+            border-right: 4px solid var(--soft-rose-gradient-end);
+        }
 
-/* התאמה למובייל */
-@media (max-width: 992px) {
-    .main-container {
-        grid-template-columns: 1fr;
-    }
-    .brand-side {
-        padding: 40px 30px;
-        min-height: auto;
-    }
-    .logo-area img {
-        height: 110px; 
-    }
-    .main-intro h1 {
-        font-size: 38px;
-        white-space: normal; 
-    }
-    .navigation-side {
-        padding: 40px 20px;
-    }
-    .course-link-block {
-        padding: 18px 24px;
-    }
-    .course-link-block h2 {
-        font-size: 19px;
-    }
-}
-</style>
+        .course-link-block:hover {
+            transform: translateY(-4px) translateX(-4px);
+            background: var(--white);
+            border-color: var(--soft-rose-gradient-end);
+            box-shadow: 0 12px 30px rgba(163, 122, 88, 0.07);
+        }
+
+        .course-info-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .course-type-label {
+            font-family: var(--body-font);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            opacity: 0.65;
+            font-weight: 700;
+        }
+
+        .course-link-block h2 {
+            font-family: var(--body-font);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+
+        .course-link-block:hover h2 {
+            color: var(--title-color);
+        }
+
+        /* עיגול החץ האינטראקטיבי */
+        .arrow-indicator {
+            width: 44px;
+            height: 44px;
+            border-radius: 50px;
+            background: var(--soft-rose-gradient-start);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .course-link-block:hover .arrow-indicator {
+            background: var(--growth-green);
+            color: #ffffff;
+            transform: rotate(-45deg);
+        }
+
+        /* התאמה למובייל */
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-side {
+                padding: 40px 25px;
+                min-height: auto;
+            }
+
+            .logo-area img {
+                height: 110px;
+            }
+
+            .main-intro h1 {
+                font-size: 38px;
+                white-space: normal;
+            }
+
+            .professional-profile-area {
+                margin-top: 30px;
+            }
+
+            .navigation-side {
+                padding: 40px 20px;
+            }
+
+            .course-link-block {
+                padding: 18px 24px;
+            }
+
+            .course-link-block h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="main-container">
+    <div class="main-container">
 
-    <!-- SECTION ימני: מותג, לוגו, רקע מתחלף רך וכותרת בשורה אחת -->
-    <section class="brand-side">
-        <div>
-            <div class="logo-area">
-                <img src="picth.png" alt="רבדים" onerror="this.src='picth.jpg'; this.onerror=function(){this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:var(--title-font); font-size:42px; font-weight:700; color:var(--title-color);\'>רבדים</span>';};">
-            </div>
-            
-            <div class="main-intro">
-                <h1>למידה שיוצרת צמיחה ושינוי</h1>
-                <p>
-                    הכירו את מסלולי ההכשרה המתקדמים שלנו. אנו מציעים קורסים מרתקים וחדשניים, המשלבים גישות דינמיות וכלים פורצי דרך שמטרתם להוביל אתכם קדימה, להרחיב את אופקיכם ולהעניק לכם יתרון מקצועי ומעשי משמעותי בשטח.
-                </p>
-            </div>
-        </div>
-        
-        <!-- פרטי הקשר הקבועים -->
-        <div class="contact-footer">
-            <div class="contact-info-item">
-                <span>טלפון:</span>
-                <p>0527174783</p>
-            </div>
-            <div class="contact-info-item">
-                <span>מייל:</span>
-                <a href="mailto:Revadim200@gmail.com">Revadim200@gmail.com</a>
-            </div>
-            <div class="footer-note">
-                © 2026 רבדים. כל הזכויות שמורות.
-            </div>
-        </div>
-    </section>
+        <section class="brand-side">
+            <div>
+                <div class="logo-area">
+                    <img src="picth.png" alt="רבדים"
+                        onerror="this.src='picth.jpg'; this.onerror=function(){this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:var(--title-font); font-size:42px; font-weight:700; color:var(--title-color);\'>רבדים</span>';};">
+                </div>
 
-    <!-- SECTION שמאלי: רשימת הקישורים המלאה שכולה כוללת כעת border-right -->
-    <main class="navigation-side">
-        <div class="nav-headline">הקורסים וההכשרות שלנו:</div>
-        
-        <!-- קורס 1 -->
-        <a href="Visut.html" class="course-link-block">
-            <div class="course-info-meta">
-                <span class="course-type-label">הכשרה מקצועית</span>
-                <h2>ויסות רגשי</h2>
+                <div class="main-intro">
+                    <h1>למידה שיוצרת צמיחה ושינוי</h1>
+                    <p>
+                        הכירו את מסלולי ההכשרה המתקדמים שלנו. אנו מציעים קורסים מרתקים וחדשניים, המשלבים גישות דינמיות
+                        וכלים פורצי דרך שמטרתם להוביל אתכם קדימה, להרחיב את אופקיכם ולהעניק לכם יתרון מקצועי ומעשי
+                        משמעותי בשטח.
+                    </p>
+                </div>
             </div>
-            <div class="arrow-indicator">←</div>
-        </a>
 
-        <!-- קורס 2 -->
-        <a href="nlp-practitioner.html" class="course-link-block">
-            <div class="course-info-meta">
-                <span class="course-type-label">תכנית הסמכה</span>
-                <h2>NLP Practitioner</h2>
+            <div>
+                <div class="professional-profile-area">
+                    <div class="elegant-gold-line"></div>
+
+                    <h3 class="gradient-name">רחלי גרינבאום</h3>
+                    
+                    <div class="expert-subtitle">
+                        פסיכותרפיסטית, מאסטר טריינר ב-NLP <br> הכשרות מקצועיות, סדנאות וטיפול רגשי
+                    </div>
+
+                    <div class="unified-contact-line">
+                        <a href="tel:0527174783">052-717-4783</a>
+                        <span class="divider-bullet">•</span>
+                        <a href="mailto:Revadim200@gmail.com">Revadim200@gmail.com</a>
+                    </div>
+                </div>
             </div>
-            <div class="arrow-indicator">←</div>
-        </a>
+        </section>
 
-        <!-- קורס 3 -->
-        <a href="comunicatoin.html" class="course-link-block">
-            <div class="course-info-meta">
-                <span class="course-type-label">כלים מעשיים</span>
-                <h2>הגשר לקשר</h2>
-            </div>
-            <div class="arrow-indicator">←</div>
-        </a>
+        <main class="navigation-side">
+            <div class="nav-headline">הקורסים וההכשרות שלנו:</div>
 
-        <!-- קורס 4 -->
-        <a href="NoarBesicui.html" class="course-link-block">
-            <div class="course-info-meta">
-                <span class="course-type-label">תכנית עומק</span>
-                <h2>נוער בסיכוי</h2>
-            </div>
-            <div class="arrow-indicator">←</div>
-        </a>
+            <a href="Visut.html" class="course-link-block">
+                <div class="course-info-meta">
+                    <span class="course-type-label">הכשרה מקצועית</span>
+                    <h2>ויסות רגשי</h2>
+                </div>
+                <div class="arrow-indicator">←</div>
+            </a>
 
-        <!-- ריבוע 5 -->
-        <a href="studentSays.html" class="course-link-block">
-            <div class="course-info-meta">
-                <span class="course-type-label">משובים מהשטח</span>
-                <h2>שיתופי התלמידות</h2>
-            </div>
-            <div class="arrow-indicator">←</div>
-        </a>
-    </main>
+            <a href="nlp-practitioner.html" class="course-link-block">
+                <div class="course-info-meta">
+                    <span class="course-type-label">תכנית הסמכה</span>
+                    <h2>NLP Practitioner</h2>
+                </div>
+                <div class="arrow-indicator">←</div>
+            </a>
 
-</div>
+            <a href="comunicatoin.html" class="course-link-block">
+                <div class="course-info-meta">
+                    <span class="course-type-label">כלים מעשיים</span>
+                    <h2>הגשר לקשר</h2>
+                </div>
+                <div class="arrow-indicator">←</div>
+            </a>
+
+            <a href="NoarBesicui.html" class="course-link-block">
+                <div class="course-info-meta">
+                    <span class="course-type-label">תכנית עומק</span>
+                    <h2>נוער בסיכוי</h2>
+                </div>
+                <div class="arrow-indicator">←</div>
+            </a>
+
+            <a href="studentSays.html" class="course-link-block">
+                <div class="course-info-meta">
+                    <span class="course-type-label">משובים מהשטח</span>
+                    <h2>שיתופי התלמידות</h2>
+                </div>
+                <div class="arrow-indicator">←</div>
+            </a>
+        </main>
+
+    </div>
 
 </body>
+
 </html>
