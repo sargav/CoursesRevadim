@@ -1,0 +1,41 @@
+/* ============================================================
+   רבדים – אנימציות עדינות
+   - כניסה רכה של החלק העליון בטעינת העמוד
+   - הופעה הדרגתית של כרטיסים וכותרות בגלילה
+   האנימציות פועלות רק אם JavaScript רץ (המחלקה anim-ready),
+   ולא פועלות בכלל אצל מי שביקש "הפחתת תנועה" במכשיר.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* ---------- כניסה בטעינת העמוד ---------- */
+    html.anim-ready .anim-intro {
+        animation: revadim-intro .9s cubic-bezier(.22, .61, .36, 1) both;
+        animation-delay: var(--anim-delay, 0s);
+    }
+
+    /* ---------- הופעה בגלילה ---------- */
+    html.anim-ready .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    html.anim-ready .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition:
+            opacity .7s ease var(--anim-delay, 0s),
+            transform .7s cubic-bezier(.22, .61, .36, 1) var(--anim-delay, 0s);
+    }
+}
+
+@keyframes revadim-intro {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
