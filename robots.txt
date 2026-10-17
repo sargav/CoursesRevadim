@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://racheligrinbaum.onrender.com/sitemap.xml
