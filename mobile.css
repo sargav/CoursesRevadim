@@ -6,6 +6,10 @@
 
 @media (max-width: 640px) {
 
+    img {
+        max-width: 100%;
+    }
+
     /* ---------- מרווחים: פחות ריפוד בצדדים ---------- */
     .hero-container,
     .cards-section,
@@ -67,6 +71,19 @@
     .details-bar {
         flex-wrap: wrap;
         gap: 16px 10px;
+    }
+
+    .stats-banner,
+    .details-bar {
+        justify-content: center;
+    }
+
+    .method-item-box {
+        padding: 20px;
+    }
+
+    .block-box {
+        padding: 22px;
     }
 
     .stat-block,
