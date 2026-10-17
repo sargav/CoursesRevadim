@@ -1,0 +1,68 @@
+/* ============================================================
+   רבדים – עיצוב משותף לכל עמודי האתר
+   כל עמוד שומר את העיצוב והצבעים הייחודיים שלו בתוך הקובץ שלו.
+   כאן נמצא רק מה שזהה בכל העמודים, כדי לשנות אותו במקום אחד.
+   ============================================================ */
+
+/* איפוס בסיסי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- כפתור "לכל הקורסים של רבדים" בתחתית עמודי הקורסים ----------
+   הצבעים נקבעים בכל עמוד דרך משתנים על .back-to-courses-wrap:
+   --back-accent      צבע המסגרת והעיגול
+   --back-text        צבע הטקסט במצב רגיל
+   --back-hover-bg    צבע המילוי בריחוף
+   --back-hover-text  צבע הטקסט בריחוף (וצבע החץ במצב רגיל)
+*/
+.back-to-courses-wrap {
+    margin: 30px 0 6px;
+    text-align: center;
+}
+
+.back-to-courses {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px 12px 30px;
+    border: 1.5px solid var(--back-accent);
+    border-radius: 999px;
+    color: var(--back-text);
+    font-family: 'Assistant', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    text-decoration: none;
+    background: transparent;
+    transition: background .3s ease, color .3s ease, box-shadow .3s ease;
+}
+
+.back-to-courses .arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--back-accent);
+    color: var(--back-hover-text);
+    font-size: 18px;
+    transition: transform .3s ease;
+}
+
+.back-to-courses:hover,
+.back-to-courses:focus-visible {
+    background: var(--back-hover-bg);
+    color: var(--back-hover-text);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+
+.back-to-courses:hover .arrow,
+.back-to-courses:focus-visible .arrow {
+    transform: translateX(4px);
+    background: var(--back-hover-text);
+    color: var(--back-hover-bg);
+}
