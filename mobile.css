@@ -1,0 +1,156 @@
+/* ============================================================
+   רבדים – התאמה למסכים קטנים (טלפונים וטאבלטים צרים)
+   הקובץ נטען אחרי העיצוב של כל עמוד, ולכן גובר עליו רק במסכים צרים.
+   במחשב שום דבר לא משתנה.
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    /* ---------- מרווחים: פחות ריפוד בצדדים ---------- */
+    .hero-container,
+    .cards-section,
+    .text-manifesto,
+    .timeline-section,
+    .bottom-blocks,
+    .intro-section,
+    .info-section,
+    .responsibility-section,
+    .must-section,
+    .syllabus-section,
+    .outcomes-section,
+    .footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .hero-container,
+    .intro-section,
+    .info-section,
+    .responsibility-section,
+    .syllabus-section,
+    .outcomes-section,
+    .timeline-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .hero-inner {
+        width: 100%;
+        padding: 20px 16px;
+    }
+
+    .details-bar,
+    .stats-banner {
+        padding: 18px 16px;
+    }
+
+    /* ---------- רוחבים קבועים → גמישים ---------- */
+    .sub-title,
+    .hero-sub,
+    .methods-container,
+    .hero-divider {
+        width: auto;
+        max-width: 100%;
+    }
+
+    /* ---------- רשתות של שתיים/שלוש עמודות → עמודה אחת ---------- */
+    .cards-grid,
+    .info-grid,
+    .syllabus-grid,
+    .outcomes-grid,
+    .resp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- שורות של נתונים: נשברות לשורה הבאה ---------- */
+    .stats-banner,
+    .details-bar {
+        flex-wrap: wrap;
+        gap: 16px 10px;
+    }
+
+    .stat-block,
+    .detail-item {
+        flex: 1 1 40%;
+    }
+
+    .stat-lbl,
+    .section-title {
+        white-space: normal;
+    }
+
+    /* ---------- כותרות גדולות: קטנות יותר ---------- */
+    .main-title-text,
+    .main-title,
+    .hero-title {
+        font-size: 58px;
+        line-height: 1.05;
+    }
+
+    .manifesto-heading,
+    .intro-lead,
+    .info-title,
+    .resp-title,
+    .section-title,
+    .section-title-modern {
+        font-size: 36px;
+    }
+
+    .must-title {
+        font-size: 32px;
+    }
+
+    .detail-num,
+    .stat-val {
+        font-size: 34px;
+    }
+
+    .intro-section::before {
+        font-size: 80px;
+    }
+
+    .hero-logo,
+    .brand-logo {
+        width: 110px;
+    }
+
+    /* ---------- טקסט: בלי יישור לשני הצדדים, שלא ייווצרו רווחים גדולים ---------- */
+    .manifesto-p,
+    .intro-body {
+        text-align: right;
+    }
+
+    /* ---------- טבלת סילבוס (נוער בסיכוי): כל שורה הופכת לכרטיס ---------- */
+    .syllabus-table thead {
+        display: none;
+    }
+
+    .syllabus-table,
+    .syllabus-table tbody,
+    .syllabus-table tr,
+    .syllabus-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .syllabus-table tr {
+        border-bottom: 1px solid rgba(0, 0, 0, .06);
+        padding: 10px 0;
+    }
+
+    .syllabus-table td {
+        padding: 6px 16px;
+        border-bottom: none;
+    }
+
+    .topic-cell {
+        width: 100%;
+        font-weight: 700;
+    }
+
+    /* ---------- כפתור "לכל הקורסים" ---------- */
+    .back-to-courses {
+        font-size: 16px;
+        padding: 10px 12px 10px 22px;
+    }
+}
