@@ -502,11 +502,6 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
-<style>
-.back-to-courses{position:absolute;top:16px;right:16px;z-index:1000;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.92);color:#3A3533;border:1px solid rgba(0,0,0,.12);font-family:'Assistant',sans-serif;font-size:15px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:background .2s ease}
-.back-to-courses:hover,.back-to-courses:focus-visible{background:#fff;text-decoration:underline}
-</style>
-<a href="index.html" class="back-to-courses"><span aria-hidden="true">→</span> חזרה לדף הקורסים</a>
 
 
 <!-- HERO -->
@@ -721,6 +716,14 @@
   <div class="footer-sub">לפרטים נוספים צרו קשר - <br><br>
 רחלי גרינבאום  | 0527174783 <br><br>
 <a href="mailto:Revadim200@gmail.com" style="color: inherit;">Revadim200@gmail.com</a></div>
+  <style>
+  .back-to-courses-wrap{margin:30px 0 6px;text-align:center}
+  .back-to-courses{display:inline-flex;align-items:center;gap:12px;padding:12px 14px 12px 30px;border:1.5px solid #EAD3CE;border-radius:999px;color:#FFFFFF;font-family:'Assistant',sans-serif;font-size:17px;font-weight:600;letter-spacing:.3px;text-decoration:none;background:transparent;transition:background .3s ease,color .3s ease,box-shadow .3s ease}
+  .back-to-courses .arrow{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#EAD3CE;color:#3D3533;font-size:18px;transition:transform .3s ease}
+  .back-to-courses:hover,.back-to-courses:focus-visible{background:#EAD3CE;color:#3D3533;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .back-to-courses:hover .arrow,.back-to-courses:focus-visible .arrow{transform:translateX(4px);background:#3D3533;color:#EAD3CE}
+  </style>
+  <div class="back-to-courses-wrap"><a href="index.html" class="back-to-courses"><span class="arrow" aria-hidden="true">→</span>לכל הקורסים של רבדים</a></div>
   <div class="footer-ornament">✦ ✦ ✦</div>
 </footer>
 
